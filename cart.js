@@ -167,7 +167,7 @@ function renderCartItems(cartItems) {
     cartItems.forEach((item, index) => {
         const row = `
             <tr>
-                <td><img src="${item.image}" alt="${item.title}" style="width: 50px; height: 50px;" class="image"></td>
+                <td><img src="${item.image}" alt="${item.title}" class="image"></td>
                 <td>${item.title}</td>
                 <td>₹ ${item.price}</td>
                 <td>
