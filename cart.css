@@ -224,6 +224,13 @@ table th {
         padding-top: 160px;
     }
 
+    .content h2 {
+        font-size: 2.25em;
+        font-weight: 600;
+        text-align: center;
+        padding-bottom: 30px;
+    }
+
     .table th,
     .table td {
         font-size: 12px;
