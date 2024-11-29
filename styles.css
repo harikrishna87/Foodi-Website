@@ -1,0 +1,448 @@
+/* Login & Signup Forms Stylings */
+
+* {
+  font-family: 'Times New Roman', Times, serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/*Header Page*/
+.header {
+  position: relative;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 999;
+  box-shadow: 1px 1px 10px 4px grey;
+  background-color: white;
+}
+
+section {
+  min-height: 80vh;
+}
+
+.header img {
+  width: 200px;
+}
+
+/*Header Page End*/
+
+/*Hero Section*/
+.title {
+  font-size: 3.5em;
+  font-weight: bold;
+  padding-top: 130px;
+}
+
+.title span {
+  color: rgb(54, 241, 54);
+}
+
+.title1 {
+  font-size: 26px;
+  font-weight: bold;
+  padding-top: 40px;
+}
+
+.button {
+  line-height: 1;
+  background-color: transparent;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.35em;
+  padding: 0.75em 1em;
+  padding-right: 1.25em;
+  color: #fff;
+  border: 1px solid transparent;
+  font-weight: 700;
+  border-radius: 10px;
+  font-size: 18px;
+  transition: transform 0.3s;
+  margin-top: 50px;
+  background: rgb(54, 241, 54);
+}
+
+.button__icon {
+  width: 1.5em;
+  height: 1.5em;
+}
+
+.button:hover {
+  border-color: #f4f5f2;
+  background-color: rgb(183, 180, 180);
+}
+
+.button:active {
+  transform: scale(0.98);
+}
+
+.header nav a {
+  text-decoration: none;
+  color: rgb(54, 241, 54);
+  padding: 15px;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+/*Hero Section Ends*/
+
+@media screen and (max-width: 426px) {
+  #login_btn {
+    padding: 7px 14px;
+    background-color: green;
+    color: white;
+    margin: 20px;
+    font-size: 13px;
+    border: none;
+    border-radius: 15px;
+  }
+
+  .header img {
+    width: 120px;
+  }
+
+  .title {
+    font-size: 3em;
+    font-weight: bold;
+    padding-top: 100px;
+  }
+
+  .title span {
+    color: rgb(54, 241, 54);
+  }
+
+  .title1 {
+    font-size: 26px;
+    font-weight: bold;
+    padding-top: 20px;
+  }
+
+  .title2 {
+    font-size: 3em;
+    font-weight: bold;
+    padding-top: 150px;
+  }
+}
+
+@media screen and (min-width: 426px) and (max-width: 780px) {
+  #login_btn {
+    padding: 8.5px 17px;
+    background-color: green;
+    color: white;
+    margin: 20px;
+    font-size: 15px;
+    border: none;
+    border-radius: 15px;
+  }
+
+  .header img {
+    width: 140px;
+  }
+
+  .title {
+    font-size: 3em;
+    font-weight: bold;
+    padding-top: 70px;
+  }
+
+  .title span {
+    color: rgb(54, 241, 54);
+  }
+
+  .title1 {
+    font-size: 26px;
+    font-weight: bold;
+    padding-top: 25px;
+  }
+
+  .title2 {
+    font-size: 3em;
+    font-weight: bold;
+    padding-top: 150px;
+  }
+
+}
+
+/*Categories*/
+
+.title2 {
+  font-size: 3em;
+  font-weight: bold;
+  padding-top: 150px;
+}
+
+.title2 span {
+  color: rgb(54, 241, 54);
+}
+
+.card1 {
+  width: 100%;
+  border: 1px solid rgb(237, 235, 235);
+  border-radius: 20px;
+  margin: 20px 0px;
+  transition: transform 2s;
+  box-shadow: 1px 1px 10px 4px rgb(248, 246, 246);
+}
+
+.card1:hover {
+  transform: scale(1.01);
+}
+
+.card1 img {
+  width: 100%;
+  height: 200px;
+  border-radius: 20px;
+}
+
+.card1-title {
+  font-size: 20px;
+  font-weight: 500;
+  padding: 15px;
+}
+
+.card1__text {
+  font-size: 20px;
+  font-weight: 200;
+  padding: 10px 0px;
+}
+
+.card1__button {
+  background-color: rgb(54, 241, 54);
+  color: rgb(255, 255, 255);
+  border: none;
+  border-radius: 10px;
+  padding: 8px 16px;
+  margin-top: 10px;
+  transition: transform 2s;
+  cursor: pointer;
+}
+
+.card1__button:hover {
+  background-color: rgb(183, 180, 180);
+}
+
+.card1__button:active {
+  transform: scale(0.8);
+}
+
+/*Categories End*/
+
+/*Team Members Starts*/
+
+.title3 {
+  font-size: 3em;
+  font-weight: bold;
+  padding-top: 100px;
+  padding-bottom: 20px;
+}
+
+.title3 span {
+  color: rgb(54, 241, 54);
+}
+
+.cards-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 50px 0;
+  width: 100%;
+}
+
+.card {
+  height: 30em;
+  margin: 8px;
+  box-shadow: 0 1rem 4rem rgba(0, 0, 0, 0.4);
+  border-radius: 0.5rem;
+  position: relative;
+}
+
+.card-img-wrapper {
+  width: 100%;
+  height: 100%;
+  background-color: #262626;
+  border-radius: 0.5rem;
+}
+
+.card-img-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.8;
+  border-radius: 0.5rem;
+  transition: opacity 0.3s;
+}
+
+.card:hover .card-img-wrapper img {
+  opacity: 0.5;
+}
+
+.card-info {
+  position: absolute;
+  bottom: 0;
+  padding: 2rem;
+  text-shadow: 0 0.2rem 0.5rem rgba(0, 0, 0, 0.4);
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s;
+}
+
+.card:hover .card-info {
+  bottom: 2rem;
+  opacity: 1;
+  visibility: visible;
+}
+
+.card-info h2 {
+  font-size: 25px;
+  line-height: 2.5rem;
+  font-weight: 300;
+  color: #eee;
+}
+
+.card-info h3 {
+  font-size: 25px;
+  font-weight: 500;
+  color: #a52a2a;
+  margin-bottom: 1rem;
+}
+
+.card-info p {
+  font-size: 20px;
+  line-height: 1.6rem;
+  font-weight: 300;
+  color: #eee;
+  width: 80%;
+  margin-bottom: 2rem;
+}
+
+.card-info button {
+  background-color: rgb(54, 241, 54);
+  border: none;
+  font-family: "Baloo Da 2", serif;
+  font-size: 18px;
+  padding: 10px 20px;
+  color: #eee;
+  border-radius: 20px;
+  box-shadow: 0 0.1rem 0.8rem rgba(0, 0, 0, 0.4);
+}
+
+/*Team Members Ends*/
+
+/*Login Page & SignUp Page*/
+input {
+  border: 1px solid black;
+  border-radius: 8px;
+  width: 90%;
+}
+
+.fa-solid {
+  font-size: 16px;
+  padding-left: 10px;
+  color: red;
+  cursor: pointer;
+}
+
+input:focus {
+  border: 2px solid orange;
+  outline: none;
+}
+
+.messagediv {
+  background-color: rgb(54, 241, 54);
+  color: white;
+  padding: 5px 10px;
+  margin: 5px 0px;
+  width: 90%;
+  border-radius: 5px;
+  font-size: 1rem;
+  opacity: 0;
+  animation: fadeout 5s forwards;
+}
+
+.signup-btn,
+.login-btn {
+  padding: 8px 16px;
+  color: white;
+  background-color: rgb(54, 241, 54);
+  margin: 10px 0px;
+  border: none;
+  font-size: 18px;
+  border-radius: 12px;
+}
+
+.mb-2 {
+  font-size: 18px;
+  font-weight: 500;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+.icons {
+  font-weight: 500;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.icons span {
+  background-color: rgb(13, 177, 202);
+  color: white;
+  font-size: 19px;
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 15px;
+  cursor: pointer;
+}
+
+.icons i {
+  padding-right: 6px;
+}
+
+#login-form a,
+#signup-form a {
+  color: rgb(54, 241, 54);
+  font-weight: 700;
+  font-size: 17px;
+}
+
+#img {
+  width: 200px;
+  margin: 0 auto;
+}
+
+#login_btn {
+  padding: 8px 16px;
+  background-color: rgb(54, 241, 54);
+  color: white;
+  margin: 20px;
+  border: none;
+  font-size: 20px;
+  transition: transform 2s;
+  border-radius: 10px;
+}
+
+#login_btn:hover {
+  background-color: rgb(183, 180, 180);
+}
+
+#login_btn:active {
+  transform: scale(0.8);
+}
+
+.fa-eye {
+  color: rgb(54, 241, 54);
+  cursor: pointer;
+}
+
+@media screen and (max-width: 420px) {
+  input {
+    width: 87.5%;
+  }
+}
+
+/*Login & SignUp Page Ends*/
