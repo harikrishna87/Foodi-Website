@@ -57,17 +57,5 @@ let modal = document.getElementById("my_modal_3");
       });
     };
 
-    // Loading Spinners 
-    document.addEventListener("DOMContentLoaded", () => {
-      const preLoader = document.querySelector(".pre_loader");
-    
-      window.addEventListener("load", () => {
-        preLoader.classList.add("hidden");
-    
-        setTimeout(() => {
-          preLoader.remove();
-        }, 500); 
-      });
-    });
     
     

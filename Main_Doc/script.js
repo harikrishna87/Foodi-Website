@@ -141,17 +141,4 @@ document.querySelector(".view_more_btn").addEventListener("click", () => {
 })
 
 
-// Loading Spinners 
-document.addEventListener("DOMContentLoaded", () => {
-    const preLoader = document.querySelector(".pre_loader");
-  
-    window.addEventListener("load", () => {
-      preLoader.classList.add("hidden");
-  
-      setTimeout(() => {
-        preLoader.remove();
-      }, 500); 
-    });
-  });
-  
 
