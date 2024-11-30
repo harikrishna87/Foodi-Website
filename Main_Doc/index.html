@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Anuradha Restaurant</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.14/dist/full.min.css" rel="stylesheet" type="text/css" />
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+  <link rel="stylesheet" href="styles.css">
+  <script type="module" src="firebase.js"></script>
+  <link rel="shortcut icon" href="../images/logo1.png" type="image/x-icon">
+</head>
+
+<body>
+
+  <header>
+    <div class="header">
+      <img src="../images/logo.png" alt="">
+      <!-- <nav>
+        <a href="#home">Home</a>
+        <a href="#categories">Categories</a>
+        <a href="#team">Team Members</a>
+      </nav> -->
+      <button id="login_btn" onclick="showModal()">Login</button>
+    </div>
+  </header>
+
+  <section id="home">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <h2 class="title">Dive into Delights Of <span>Delectable Food</span></h2>
+          <h1 class="title1"><q>Where Each Plate Weaves a Story of Culinary Mastery and Passionate Craftsmanship</q>
+          </h1>
+          <button class="button">
+            <span class="button__text">Order Now</span>
+          </button>
+        </div>
+        <div class="col-md-6 p-3">
+          <img src="../images/banner.png" alt="" width="600px">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="categories">
+    <div class="container">
+      <h2 class="title2">Explore Our Delicious <br><span>Collections</span></h2>
+      <div class="row">
+        <div class="col-12 col-sm-4 col-md-4 col-lg-3">
+          <div class="card1 shadow-lg">
+            <img src="https://assets.zeezest.com/blogs/PROD_Veg-Food-Banner_1645021052320.jpg" alt="">
+            <div class="card1-title">
+              <div class="card2 d-flex justify-content-between align-items-center">
+                <h3 class="card1__title" style="color: Red;">Veggies</h3>
+                <p> 4.2 <i class='bx bxs-star' style='color:yellow'></i></p>
+              </div>
+              <p class="p-1" style="color: cadetblue;">10+ Products</p>
+              <p class="card1__text">Fresh greens, bursting with natural flavor!</p>
+              <button class="card1__button" onclick="loginnow()">View More</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12 col-sm-4 col-md-4 col-lg-3">
+          <div class="card1 shadow-lg">
+            <img
+              src="https://st4.depositphotos.com/1008311/29999/i/450/depositphotos_299996728-stock-photo-south-indian-variety-non-veg.jpg"
+              alt="">
+            <div class="card1-title">
+              <div class="card2 d-flex justify-content-between align-items-center">
+                <h3 class="card1__title" style="color: Red;">Non-Veg</h3>
+                <p> 4.4 <i class='bx bxs-star' style='color:yellow'></i></p>
+              </div>
+              <p class="p-1" style="color: cadetblue;">10+ Products</p>
+              <p class="card1__text">Juicy bites, crafted to perfection always!</p>
+              <button class="card1__button" onclick="loginnow()">View More</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12 col-sm-4 col-md-4 col-lg-3">
+          <div class="card1 shadow-lg ">
+            <img
+              src="https://tropolite.com/media/blogs/delicious-christmas-finger-food-arrangement_23-2151101927_aOck2e5.jpeg"
+              alt="">
+            <div class="card1-title">
+              <div class="card2 d-flex justify-content-between align-items-center">
+                <h3 class="card1__title" style="color: Red;">Desserts</h3>
+                <p> 4.1 <i class='bx bxs-star' style='color:yellow'></i></p>
+              </div>
+              <p class="p-1" style="color: cadetblue;">7+ Products</p>
+              <p class="card1__text">Sweet treats, happiness in every single bite!</p>
+              <button class="card1__button" onclick="loginnow()">View More</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12 col-sm-4 col-md-4 col-lg-3">
+          <div class="card1 shadow-lg">
+            <img src="https://img.pikbest.com/origin/10/14/03/204pIkbEsT3Yj.jpg!w700wp" alt="">
+            <div class="card1-title">
+              <div class="card2 d-flex justify-content-between align-items-center">
+                <h3 class="card1__title" style="color: Red;">Pizzas</h3>
+                <p> 3.9 <i class='bx bxs-star' style='color:yellow'></i></p>
+              </div>
+              <p class="p-1" style="color: cadetblue;">5+ Products</p>
+              <p class="card1__text">Hot slices, love at first delicious bite!</p>
+              <button class="card1__button" onclick="loginnow()">View More</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12 col-sm-4 col-md-4 col-lg-3">
+          <div class="card1 shadow-lg">
+            <img src="https://nutritionmeetsfoodscience.com/wp-content/uploads/2019/04/iStock-157671800-1-1024x853.jpg"
+              alt="">
+            <div class="card1-title">
+              <div class="card2 d-flex justify-content-between align-items-center">
+                <h3 class="card1__title" style="color: Red;">IceCreams</h3>
+                <p> 4.4 <i class='bx bxs-star' style='color:yellow'></i></p>
+              </div>
+              <p class="p-1" style="color: cadetblue;">6+ Products</p>
+              <p class="card1__text">Cool scoops, happiness in every creamy bite!</p>
+              <button class="card1__button" onclick="loginnow()">View More</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12 col-sm-4 col-md-4 col-lg-3">
+          <div class="card1 shadow-lg">
+            <img src="https://www.lacademie.com/wp-content/uploads/2022/04/fruit-juices-drinks.jpg" alt="">
+            <div class="card1-title">
+              <div class="card2 d-flex justify-content-between align-items-center">
+                <h3 class="card1__title" style="color: Red;">Drinks</h3>
+                <p> 3.8 <i class='bx bxs-star' style='color:yellow'></i></p>
+              </div>
+              <p class="p-1" style="color: cadetblue;">8+ Products</p>
+              <p class="card1__text">Sip happiness, refresh your soul every time!</p>
+              <button class="card1__button" onclick="loginnow()">View More</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="team">
+    <div class="container">
+      <h2 class="title3">Introducing Our Team<br><span>Members</span></h2>
+      <div class="row g-5">
+        <div class="cards-wrapper">
+          <div class="col-12 col-sm-6 col-md-6 col-lg-4">
+            <div class="card" data-tilt>
+              <div class="card-img-wrapper">
+                <img src="../images/mani.jpg" alt="CEO" />
+              </div>
+              <div class="card-info">
+                <h2>Manikanta</h2>
+                <h3>Chief Executive Officer</h3>
+                <p>
+                  "Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Asperiores, impedit!"
+                </p>
+                <button>Read More</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-12 col-sm-6 col-md-6 col-lg-4">
+            <div class="card" data-tilt>
+              <div class="card-img-wrapper">
+                <img src="../images/hari.png" alt="CEO" />
+              </div>
+              <div class="card-info">
+                <h2>Hari</h2>
+                <h3>General Manager</h3>
+                <p>
+                  "Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Asperiores, impedit!"
+                </p>
+                <button>Read More</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-12 col-sm-6 col-md-6 col-lg-4">
+            <div class="card" data-tilt>
+              <div class="card-img-wrapper">
+                <img src="../images/charan.png" alt="CEO" />
+              </div>
+              <div class="card-info">
+                <h2>Charan</h2>
+                <h3>Managing Director</h3>
+                <p>
+                  "Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Asperiores, impedit!"
+                </p>
+                <button>Read More</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="text-center text-lg-start bg-body-secondary text-muted p-2">
+    <div class="container text-center text-md-start mt-5">
+      <div class="row mt-3">
+        <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+          <h6 class="text-uppercase fw-bold mb-4">
+            <img src="../images/logo.png" width="200px" />
+          </h6>
+          <p>
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Totam, harum.
+          </p>
+        </div>
+        <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+          <h6 class="text-uppercase fw-bold mb-4">
+            Products
+          </h6>
+          <p>
+            <a href="#!" class="text-reset">Veg Delights</a>
+          </p>
+          <p>
+            <a href="#!" class="text-reset">Non-Veg Items</a>
+          </p>
+          <p>
+            <a href="#!" class="text-reset">Desserts</a>
+          </p>
+          <p>
+            <a href="#!" class="text-reset">IceCreams</a>
+          </p>
+        </div>
+        <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+          <h6 class="text-uppercase fw-bold mb-4">
+            Useful links
+          </h6>
+          <p>
+            <a href="#home" class="text-reset">Home</a>
+          </p>
+          <p>
+            <a href="#categories" class="text-reset">Categories</a>
+          </p>
+          <p>
+            <a href="#team" class="text-reset">Team Members</a>
+          </p>
+          <p>
+            <a href="#!" class="text-reset">Help</a>
+          </p>
+        </div>
+        <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+          <h6 class="text-uppercase fw-bold mb-4">Contact</h6>
+          <p><i class="fas fa-home me-3"></i> Nellore, AP 524314, India</p>
+          <p>
+            <i class="fas fa-envelope me-3"></i>
+            Anuradha@Restaurant.com
+          </p>
+          <p><i class="fas fa-phone me-3"></i> + 01 234 567 88</p>
+          <p><i class="fas fa-print me-3"></i> + 01 234 567 89</p>
+        </div>
+      </div>
+    </div>
+    <!-- Section: Links  -->
+
+    <!-- Copyright -->
+    <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
+      © 2024 Copyright:
+      <a class="text-reset fw-bold" href="#">Anuradha@Restaurant.com</a>
+    </div>
+    <!-- Copyright -->
+  </footer>
+  <!-- Footer -->
+
+  <dialog id="my_modal_3" class="modal">
+    <div class="modal-box">
+      <form method="dialog">
+        <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
+      </form>
+      <!-- Login Form -->
+      <div id="login-form">
+        <img src="../images/logo.png" alt="" id="img">
+        <form>
+          <div class="mb-3">
+            <div id="loginmessage" class="messagediv" style="display: none;"></div>
+
+            <h3 class=" text-lg font-bold mb-2">Login Here</h3>
+            <label for="email" class="mb-2">Enter your Email:</label>
+            <input type="text" id="email" class="p-2 mb-2" required>
+
+            <label for="password" class="mb-2">Enter your Password:</label>
+            <input type="password" id="password" class="p-2 mb-2" required><i class="fa-solid fa-eye-slash"
+              id="icon"></i>
+
+            <button class="login-btn">Login</button>
+            <p style="text-align: center;">Don't have an account? <a href="#" onclick="showSignUpForm()">SignUp</a> Here
+            </p>
+
+            <h3 class="text-center p-2" style="color: rgb(232, 103, 103); font-size: 20px;">To Know More Please Login
+              &#128525;</h3>
+          </div>
+        </form>
+      </div>
+
+      <!-- SignUp Form -->
+      <div id="signup-form" style="display: none;">
+        <img src="../images/logo.png" alt="" id="img">
+        <form>
+          <div class="mb-3">
+            <div id="signupmessage" class="messagediv" style="display: none;"></div>
+
+            <h3 class=" text-lg font-bold mb-2">Create your Account</h3>
+            <label for="signup_username" class="mb-2">Enter your Name:</label>
+            <input type="text" id="signup_username" class="p-2 mb-2" required>
+
+            <label for="signup_email" class="mb-2">Enter your Email:</label>
+            <input type="text" id="signup_email" class="p-2 mb-2" required>
+            <div id="email_error" style="display: none;"></div>
+
+            <label for="signup_password" class="mb-2">Enter your Password:</label>
+            <input type="password" id="signup_password" class="p-2 mb-2" required><i class="fa-solid fa-eye-slash"
+              id="icon1"></i>
+            <div id="password_error" style="display: none;"></div>
+
+            <button class="signup-btn">Sign Up</button>
+            <p style="text-align: center;">Already have an account? <a href="#" onclick="showLoginForm()">Login</a> Here
+            </p>
+
+            <h3 class="text-center p-2" style="color: rgb(232, 103, 103); font-size: 20px;">To Know More Please Login
+              &#128525;</h3>
+
+          </div>
+        </form>
+      </div>
+    </div>
+  </dialog>
+  
+
+  <div class="pre_loader">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid" width="204"
+      height="204" style="shape-rendering: auto; display: block; background: rgb(255, 255, 255);"
+      xmlns:xlink="http://www.w3.org/1999/xlink">
+      <g>
+        <path style="transform:scale(0.8);transform-origin:50px 50px" stroke-linecap="round"
+          d="M24.3 30C11.4 30 5 43.3 5 50s6.4 20 19.3 20c19.3 0 32.1-40 51.4-40 C88.6 30 95 43.3 95 50s-6.4 20-19.3 20C56.4 70 43.6 30 24.3 30z"
+          stroke-dasharray="42.76482137044271 42.76482137044271" stroke-width="8" stroke="#36f136" fill="none">
+          <animate values="0;256.58892822265625" keyTimes="0;1" dur="0.7874015748031495s" repeatCount="indefinite"
+            attributeName="stroke-dashoffset"></animate>
+        </path>
+        <g></g>
+      </g>
+    </svg>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"></script>
+  <script src="login&signup.js"></script>
+</body>
+
+</html>
