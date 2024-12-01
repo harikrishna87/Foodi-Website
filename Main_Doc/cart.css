@@ -217,6 +217,25 @@ table th {
     font-weight: bold;
 }
 
+.add_more {
+    font-size: 18px;
+    padding: 8px 16px;
+    color: white;
+    background-color: rgb(54, 241, 54);
+    margin-top: 15px;
+    border: none;
+    font-weight: 500;
+    border-radius: 12px;
+    transition: transform 2s;
+}
+
+.add_more:hover {
+    background-color: rgb(183, 180, 180);
+}
+
+.add_more:active {
+    transform: scale(0.8);
+}
 /* Responsive adjustments for small screens */
 @media (max-width: 426px) {
 
@@ -229,6 +248,11 @@ table th {
         font-weight: 600;
         text-align: center;
         padding-bottom: 30px;
+    }
+
+    .details, .details1 {
+        padding-top: 15px;
+        padding-bottom: 15px;
     }
 
     .table th,
@@ -263,7 +287,7 @@ table th {
     }
     
     .details1 button {
-        font-size: 16px;
+        font-size: 14px;
         font-weight: 500;
         color: white;
         background-color: rgb(54, 241, 54);
@@ -271,6 +295,17 @@ table th {
         border: none;
         border-radius: 12px;
         margin: 10px 0px;
+        transition: transform 2s;
+    }
+
+    .add_more {
+        font-size: 14px;
+        padding: 8px 16px;
+        color: white;
+        background-color: rgb(54, 241, 54);
+        margin-top: 15px;
+        border: none;
+        border-radius: 12px;
         transition: transform 2s;
     }
 }

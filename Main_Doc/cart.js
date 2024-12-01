@@ -153,9 +153,12 @@ async function loadCartData(userId) {
 // Render Cart Items in the Table
 function renderCartItems(cartItems) {
     const cartItemsBody = document.getElementById("cartItemsBody");
+    const add_more = document.querySelector(".add_more");
     cartItemsBody.innerHTML = "";
 
     if(Object.keys(cartItems).length === 0) {
+        add_more.style.display = "none"
+
         cartItemsBody.innerHTML = `
                     <tr>
                         <td colspan="8" class="text-center cart1">Your cart is empty</td>
@@ -360,3 +363,6 @@ document.getElementById("btn").addEventListener("click", async () => {
 });
 
 
+document.querySelector(".add_more").addEventListener("click", function () {
+    window.location.href = "menu.html"
+})
