@@ -156,14 +156,14 @@ function renderCartItems(cartItems) {
     const add_more = document.querySelector(".add_more");
     cartItemsBody.innerHTML = "";
 
-    if(Object.keys(cartItems).length === 0) {
-        add_more.style.display = "none"
+    if (Object.keys(cartItems).length === 0) {
+        // add_more.style.display = "none"
 
         cartItemsBody.innerHTML = `
                     <tr>
                         <td colspan="8" class="text-center cart1">Your cart is empty</td>
                     </tr>`;
-                return;
+        return;
     }
     // cartItemsBody.textContent = "The Cart Is Empty"
 
@@ -361,6 +361,68 @@ document.getElementById("btn").addEventListener("click", async () => {
         });
     }
 });
+
+
+// document.getElementById("btn").addEventListener("click", async () => {
+//     const userId = localStorage.getItem("loggedInUserId");
+//     const cartRef = doc(db, "users", userId);
+//     const cartSnap = await getDoc(cartRef);
+
+//     if (cartSnap.exists()) {
+//         const cartData = cartSnap.data();
+//         const cartItems = cartData.cart || [];
+
+//         if (cartItems.length === 0) {
+//             Swal.fire({
+//                 title: "Cart is Empty",
+//                 text: "Please add items to your cart before proceeding to checkout.",
+//                 icon: "warning",
+//                 confirmButtonColor: "rgb(54, 241, 54)",
+//             });
+//             return;
+//         }
+
+//         const stripe = Stripe("pk_test_51QS0U3SGl1phSp276hRURPpoYmndGbf3fRQHcwb2OTRDClqkdw5iCVJmZpTdODbKIO2a12REdiydqHP4WieQuqQ600KQKaXTox"); // Replace with your Stripe public key
+
+//         try {
+//             // Send cart data to backend to create a Checkout session
+//             const response = await fetch("https://stripe-ddd4.onrender.com/create-checkout-session", {
+//                 method: "POST",
+//                 headers: { "Content-Type": "application/json" },
+//                 body: JSON.stringify({ cartItems }),
+//             });
+
+//             if (response.ok) {
+//                 const { id } = await response.json();
+//                 // Redirect to Stripe Checkout
+//                 await stripe.redirectToCheckout({ sessionId: id });
+//             } else {
+//                 const error = await response.json();
+//                 Swal.fire({
+//                     title: "Error",
+//                     text: error.message || "Failed to initiate payment. Please try again.",
+//                     icon: "error",
+//                     confirmButtonColor: "#d33",
+//                 });
+//             }
+//         } catch (err) {
+//             Swal.fire({
+//                 title: "Error",
+//                 text: err.message || "An unexpected error occurred.",
+//                 icon: "error",
+//                 confirmButtonColor: "#d33",
+//             });
+//         }
+//     } else {
+//         Swal.fire({
+//             title: "Error",
+//             text: "Unable to fetch cart data. Please try again.",
+//             icon: "error",
+//             confirmButtonColor: "#d33",
+//         });
+//     }
+// });
+
 
 
 document.querySelector(".add_more").addEventListener("click", function () {
