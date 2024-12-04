@@ -99,7 +99,7 @@ document.addEventListener("DOMContentLoaded", () => {
                                 title: "Logged Out",
                                 text: "You have successfully logged out.",
                                 icon: "success",
-                                iconColor: "green"
+                                iconColor: "rgb(54, 241, 54)"
                             }).then(() => {
                                 window.location.href = "index.html";
                             });
@@ -140,5 +140,11 @@ document.querySelector(".view_more_btn").addEventListener("click", () => {
     window.location.href = "menu.html"
 })
 
+const menu_items = document.querySelectorAll(".menu_items");
 
+menu_items.forEach(menu => {
+    menu.addEventListener("click", () => {
+        window.location.href = "menu.html"
+    })
+})
 

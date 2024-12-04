@@ -94,7 +94,7 @@ document.addEventListener("DOMContentLoaded", () => {
                                 title: "Logged Out",
                                 text: "You have successfully logged out.",
                                 icon: "success",
-                                iconColor: "green"
+                                iconColor: "rgb(54, 241, 54)"
                             }).then(() => {
                                 window.location.href = "index.html";
                             });
@@ -541,7 +541,7 @@ async function cardsContainerInit() {
                     "title": "Motichur Laddu",
                     "price": 199,
                     "category": "Desserts",
-                    "image": "https://media.istockphoto.com/id/853020286/photo/motichoor-laddu.jpg?s=612x612&w=0&k=20&c=QHjaB1XRZSMXPV9mhcuPf43YhigR0ecin_ZI3g4s3VM=",
+                    "image": "https://5.imimg.com/data5/SELLER/Default/2022/2/PX/BT/LX/100822488/motichoor-ladoo.jpg",
                     "rating": {
                       "rate": 4.3,
                       "count": 130
@@ -1083,7 +1083,7 @@ function renderCards(page) {
 
     currentProducts.forEach((product) => {
         const cardHTML = `
-            <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+            <div class="col-12 col-sm-6 col-lg-3 mb-4">
                 <div class="cards_content">
                     <img src="${product.image}" class="card-img-top" alt="${product.title}">
                     <div class="cards_content1">

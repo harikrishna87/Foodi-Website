@@ -107,7 +107,7 @@ document.addEventListener("DOMContentLoaded", () => {
                                 title: "Logged Out",
                                 text: "You have successfully logged out.",
                                 icon: "success",
-                                iconColor: "green"
+                                iconColor: "rgb(54, 241, 54)"
                             }).then(() => {
                                 window.location.href = "index.html";
                             });
@@ -126,7 +126,7 @@ document.addEventListener("DOMContentLoaded", () => {
                         title: "Cancelled",
                         text: "You are still logged in.",
                         icon: "info",
-                        iconColor: "blue",
+                        iconColor: "rgb(54, 241, 54)",
                     });
                 }
             });
@@ -157,7 +157,7 @@ function renderCartItems(cartItems) {
     cartItemsBody.innerHTML = "";
 
     if (Object.keys(cartItems).length === 0) {
-        // add_more.style.display = "none"
+        add_more.innerText = "Add Items"
 
         cartItemsBody.innerHTML = `
                     <tr>
@@ -165,6 +165,11 @@ function renderCartItems(cartItems) {
                     </tr>`;
         return;
     }
+
+    if(Object.keys(cartItems).length >= 1) {
+        add_more.innerText = "Add More Items"
+    }
+    
     // cartItemsBody.textContent = "The Cart Is Empty"
 
     cartItems.forEach((item, index) => {
@@ -300,7 +305,9 @@ onAuthStateChanged(auth, (user) => {
     }
 });
 
-// Checkout Button Event
+
+// Event listener for the button click to handle payment modal display
+
 document.getElementById("btn").addEventListener("click", async () => {
     const userId = localStorage.getItem("loggedInUserId");
     const cartRef = doc(db, "users", userId);
@@ -322,36 +329,51 @@ document.getElementById("btn").addEventListener("click", async () => {
 
         const totalAmount = cartItems.reduce((sum, item) => sum + item.price * item.quantity, 0);
 
-        Swal.fire({
-            title: "Proceed to Checkout",
-            html: `<p>Total Amount: <strong>₹ ${totalAmount.toFixed(2)}</strong></p>`,
-            icon: "info",
-            showCancelButton: true,
-            confirmButtonText: "Okay, Pay Now",
-            cancelButtonText: "Cancel",
-            confirmButtonColor: "rgb(54, 241, 54)",
-            cancelButtonColor: "#d33",
-        }).then(async (result) => {
-            if (result.isConfirmed) {
-                await updateDoc(cartRef, { cart: [] });
+        const paymentModal = new bootstrap.Modal(document.getElementById("paymentModal"));
+        paymentModal.show();
 
-                Swal.fire({
-                    title: "Payment Successful",
-                    text: "Thank you for your purchase!",
-                    icon: "success",
-                    confirmButtonColor: "rgb(54, 241, 54)",
-                });
+        let price = document.querySelector(".footer-title");
+        price.innerHTML = `Total Amount: ₹${totalAmount}`;
 
-                loadCartData(userId);
-            } else {
+        document.getElementById("confirmPayment").onclick = async () => {
+            const cardNumber = document.getElementById("cardNumber").value;
+            const cardHolder = document.getElementById("cardHolder").value;
+            const expiryDate = document.getElementById("expiryDate").value;
+            const cvv = document.getElementById("cvv").value;
+
+            if (!cardNumber || !cardHolder || !expiryDate || !cvv) {
                 Swal.fire({
-                    title: "Payment Cancelled",
-                    text: "Your cart remains unchanged.",
-                    icon: "info",
-                    confirmButtonColor: "rgb(54, 241, 54)",
+                    title: "Incomplete Details",
+                    text: "Please fill in all payment details.",
+                    icon: "error",
+                    confirmButtonColor: "#d33",
                 });
+                return;
             }
-        });
+
+            paymentModal.hide();
+
+            Swal.fire({
+                title: "Processing Payment...",
+                text: "Please wait while we process your payment.",
+                icon: "info",
+                allowOutsideClick: false,
+                showConfirmButton: false,
+            });
+
+            await new Promise((resolve) => setTimeout(resolve, 3000));
+
+            Swal.fire({
+                title: "Payment Successful",
+                text: "Thank you for your purchase!",
+                icon: "success",
+                confirmButtonColor: "rgb(54, 241, 54)",
+            });
+
+            // Clear the cart in the database
+            await updateDoc(cartRef, { cart: [] });
+            loadCartData(userId);
+        };
     } else {
         Swal.fire({
             title: "Error",
@@ -362,68 +384,22 @@ document.getElementById("btn").addEventListener("click", async () => {
     }
 });
 
+document.getElementById("cardNumber").addEventListener("input", (event) => {
+    let value = event.target.value.replace(/\s+/g, "");
+    if (value.length > 16) {
+        value = value.slice(0, 16);
+    }
+    let formattedValue = value.match(/.{1,4}/g)?.join(" ") || ""; 
+    event.target.value = formattedValue; 
+});
 
-// document.getElementById("btn").addEventListener("click", async () => {
-//     const userId = localStorage.getItem("loggedInUserId");
-//     const cartRef = doc(db, "users", userId);
-//     const cartSnap = await getDoc(cartRef);
-
-//     if (cartSnap.exists()) {
-//         const cartData = cartSnap.data();
-//         const cartItems = cartData.cart || [];
-
-//         if (cartItems.length === 0) {
-//             Swal.fire({
-//                 title: "Cart is Empty",
-//                 text: "Please add items to your cart before proceeding to checkout.",
-//                 icon: "warning",
-//                 confirmButtonColor: "rgb(54, 241, 54)",
-//             });
-//             return;
-//         }
-
-//         const stripe = Stripe("pk_test_51QS0U3SGl1phSp276hRURPpoYmndGbf3fRQHcwb2OTRDClqkdw5iCVJmZpTdODbKIO2a12REdiydqHP4WieQuqQ600KQKaXTox"); // Replace with your Stripe public key
-
-//         try {
-//             // Send cart data to backend to create a Checkout session
-//             const response = await fetch("https://stripe-ddd4.onrender.com/create-checkout-session", {
-//                 method: "POST",
-//                 headers: { "Content-Type": "application/json" },
-//                 body: JSON.stringify({ cartItems }),
-//             });
-
-//             if (response.ok) {
-//                 const { id } = await response.json();
-//                 // Redirect to Stripe Checkout
-//                 await stripe.redirectToCheckout({ sessionId: id });
-//             } else {
-//                 const error = await response.json();
-//                 Swal.fire({
-//                     title: "Error",
-//                     text: error.message || "Failed to initiate payment. Please try again.",
-//                     icon: "error",
-//                     confirmButtonColor: "#d33",
-//                 });
-//             }
-//         } catch (err) {
-//             Swal.fire({
-//                 title: "Error",
-//                 text: err.message || "An unexpected error occurred.",
-//                 icon: "error",
-//                 confirmButtonColor: "#d33",
-//             });
-//         }
-//     } else {
-//         Swal.fire({
-//             title: "Error",
-//             text: "Unable to fetch cart data. Please try again.",
-//             icon: "error",
-//             confirmButtonColor: "#d33",
-//         });
-//     }
-// });
-
-
+document.getElementById("expiryDate").addEventListener("input", (event) => {
+    let value = event.target.value.replace(/\D/g, "");
+    if (value.length > 2) {
+        value = value.slice(0, 2) + "/" + value.slice(2, 4);
+    }
+    event.target.value = value; 
+});
 
 document.querySelector(".add_more").addEventListener("click", function () {
     window.location.href = "menu.html"

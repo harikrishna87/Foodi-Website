@@ -236,6 +236,74 @@ table th {
 .add_more:active {
     transform: scale(0.8);
 }
+
+.modal-header {
+    background-color: rgb(54, 241, 54);
+    color: white;
+    text-align: center;
+}
+
+.modal-body .form-label {
+    color: rgba(78, 78, 78, 0.655);
+    font-weight: bold;
+}
+
+.modal-body .form-control {
+    border: 2px solid rgb(183, 180, 180);
+    background-color: white;
+    color: black;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.modal-body .form-control:focus {
+    border-color: orange;
+    box-shadow: 0 0 5px orange;
+    outline: none;
+}
+
+.modal-footer .btn-secondary {
+    background-color:rgb(183, 180, 180);
+    color: white;
+    border: 1px solid white;
+}
+
+.modal-footer .btn-secondary:hover {
+    background-color: white;
+    color: black; 
+    border: 1px solid ;
+}
+
+.modal-footer .btn-success {
+    background-color: rgb(54, 241, 54);
+    color: white;
+    border: 1px solid white;
+}
+
+.modal-footer .btn-success:hover {
+    background-color: white;
+    color: black;
+    border: 1px solid rgb(54, 241, 54);
+}
+
+.modal-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+}
+
+.footer-title {
+    margin: 0;
+    font-weight: bold;
+    color : rgba(255, 0, 0, 0.501);
+}
+
+.footer-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+
 /* Responsive adjustments for small screens */
 @media (max-width: 426px) {
 

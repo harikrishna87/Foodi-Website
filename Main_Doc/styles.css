@@ -200,6 +200,7 @@ section {
   margin: 20px 0px;
   transition: transform 2s;
   box-shadow: 1px 1px 10px 4px rgb(248, 246, 246);
+  height: 465px;
 }
 
 .card1:hover {
