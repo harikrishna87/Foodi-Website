@@ -134,6 +134,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 });
 
+
 // Load Cart Data and Render in Table
 async function loadCartData(userId) {
     const cartRef = doc(db, "users", userId);
@@ -157,20 +158,17 @@ function renderCartItems(cartItems) {
     cartItemsBody.innerHTML = "";
 
     if (Object.keys(cartItems).length === 0) {
-        add_more.innerText = "Add Items"
-
+        add_more.innerText = "Add Items";
         cartItemsBody.innerHTML = `
-                    <tr>
-                        <td colspan="8" class="text-center cart1">Your cart is empty</td>
-                    </tr>`;
+            <tr>
+                <td colspan="8" class="text-center cart1">Your cart is empty</td>
+            </tr>`;
         return;
     }
 
-    if(Object.keys(cartItems).length >= 1) {
-        add_more.innerText = "Add More Items"
+    if (Object.keys(cartItems).length >= 1) {
+        add_more.innerText = "Add More Items";
     }
-    
-    // cartItemsBody.textContent = "The Cart Is Empty"
 
     cartItems.forEach((item, index) => {
         const row = `
@@ -185,10 +183,9 @@ function renderCartItems(cartItems) {
                 </td>
                 <td>₹ ${(item.price * item.quantity).toFixed(2)}</td>
                 <td>
-                    <button class="remove-item" data-index="${index}"><i class='bx bxs-trash-alt' style='color:#fc0707'  ></i></button>
+                    <button class="remove-item" data-index="${index}"><i class='bx bxs-trash-alt' style='color:#fc0707'></i></button>
                 </td>
-            </tr>
-        `;
+            </tr>`;
         cartItemsBody.innerHTML += row;
     });
 
@@ -209,15 +206,23 @@ async function incrementQuantity(event) {
     const userId = localStorage.getItem("loggedInUserId");
     const index = event.target.getAttribute("data-index");
 
+    // Update UI immediately
+    const quantityElement = event.target.previousElementSibling;
+    let quantity = parseInt(quantityElement.innerText);
+    quantity += 1;
+    quantityElement.innerText = quantity;
+
+    // Update Firestore
     const cartRef = doc(db, "users", userId);
     const cartSnap = await getDoc(cartRef);
 
     if (cartSnap.exists()) {
         const cartData = cartSnap.data();
-        cartData.cart[index].quantity += 1;
+        cartData.cart[index].quantity = quantity;
 
         await updateDoc(cartRef, { cart: cartData.cart });
-        loadCartData(userId); // Refresh cart
+
+        updateCartSummary(cartData.cart);
     }
 }
 
@@ -226,23 +231,34 @@ async function decrementQuantity(event) {
     const userId = localStorage.getItem("loggedInUserId");
     const index = event.target.getAttribute("data-index");
 
+    const quantityElement = event.target.nextElementSibling;
+    let quantity = parseInt(quantityElement.innerText);
+
+    if (quantity > 1) {
+        quantity -= 1;
+        quantityElement.innerText = quantity;
+    }
+
     const cartRef = doc(db, "users", userId);
     const cartSnap = await getDoc(cartRef);
 
     if (cartSnap.exists()) {
         const cartData = cartSnap.data();
 
-        if (cartData.cart[index].quantity > 1) {
-            cartData.cart[index].quantity -= 1;
+        if (quantity > 0) {
+            cartData.cart[index].quantity = quantity;
         } else {
             cartData.cart.splice(index, 1);
         }
 
         await updateDoc(cartRef, { cart: cartData.cart });
-        loadCartData(userId);
+
+        // Update summary immediately
+        updateCartSummary(cartData.cart);
     }
 }
 
+// Remove Cart Item
 async function removeCartItem(event) {
     const userId = localStorage.getItem("loggedInUserId");
     const index = event.target.getAttribute("data-index");
@@ -270,7 +286,7 @@ async function removeCartItem(event) {
                     title: "Removed!",
                     text: "The item has been removed from your cart",
                     icon: "success",
-                    iconColor: "rgb(54, 241, 54)"
+                    iconColor: "rgb(54, 241, 54)",
                 });
             }
         } else {
@@ -282,7 +298,6 @@ async function removeCartItem(event) {
         }
     });
 }
-
 
 // Update Cart Summary
 function updateCartSummary(cartItems) {
@@ -389,8 +404,8 @@ document.getElementById("cardNumber").addEventListener("input", (event) => {
     if (value.length > 16) {
         value = value.slice(0, 16);
     }
-    let formattedValue = value.match(/.{1,4}/g)?.join(" ") || ""; 
-    event.target.value = formattedValue; 
+    let formattedValue = value.match(/.{1,4}/g)?.join(" ") || "";
+    event.target.value = formattedValue;
 });
 
 document.getElementById("expiryDate").addEventListener("input", (event) => {
@@ -398,7 +413,15 @@ document.getElementById("expiryDate").addEventListener("input", (event) => {
     if (value.length > 2) {
         value = value.slice(0, 2) + "/" + value.slice(2, 4);
     }
-    event.target.value = value; 
+    event.target.value = value;
+});
+
+document.getElementById("cvv").addEventListener("input", (event) => {
+    let value = event.target.value.replace(/\D/g, "");
+    if (value.length > 3) {
+        value = value.slice(0, 3);
+    }
+    event.target.value = value;
 });
 
 document.querySelector(".add_more").addEventListener("click", function () {
