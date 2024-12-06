@@ -206,13 +206,16 @@ async function incrementQuantity(event) {
     const userId = localStorage.getItem("loggedInUserId");
     const index = event.target.getAttribute("data-index");
 
-    // Update UI immediately
     const quantityElement = event.target.previousElementSibling;
     let quantity = parseInt(quantityElement.innerText);
     quantity += 1;
     quantityElement.innerText = quantity;
 
-    // Update Firestore
+    const row = event.target.closest("tr");
+    const pricePerUnit = parseFloat(row.children[2].innerText.replace("₹", "").trim());
+    const totalPriceCell = row.children[4];
+    totalPriceCell.innerText = `₹ ${(pricePerUnit * quantity).toFixed(2)}`;
+
     const cartRef = doc(db, "users", userId);
     const cartSnap = await getDoc(cartRef);
 
@@ -237,24 +240,23 @@ async function decrementQuantity(event) {
     if (quantity > 1) {
         quantity -= 1;
         quantityElement.innerText = quantity;
-    }
 
-    const cartRef = doc(db, "users", userId);
-    const cartSnap = await getDoc(cartRef);
+        const row = event.target.closest("tr");
+        const pricePerUnit = parseFloat(row.children[2].innerText.replace("₹", "").trim());
+        const totalPriceCell = row.children[4];
+        totalPriceCell.innerText = `₹ ${(pricePerUnit * quantity).toFixed(2)}`;
 
-    if (cartSnap.exists()) {
-        const cartData = cartSnap.data();
+        const cartRef = doc(db, "users", userId);
+        const cartSnap = await getDoc(cartRef);
 
-        if (quantity > 0) {
+        if (cartSnap.exists()) {
+            const cartData = cartSnap.data();
             cartData.cart[index].quantity = quantity;
-        } else {
-            cartData.cart.splice(index, 1);
+
+            await updateDoc(cartRef, { cart: cartData.cart });
+
+            updateCartSummary(cartData.cart);
         }
-
-        await updateDoc(cartRef, { cart: cartData.cart });
-
-        // Update summary immediately
-        updateCartSummary(cartData.cart);
     }
 }
 
