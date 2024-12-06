@@ -44,27 +44,6 @@ const signup = document.querySelector(".signup-btn");
 signup.addEventListener("click", (event) => {
     event.preventDefault();
 
-    // const fullname = document.getElementById("signup_username");
-    // const email = document.getElementById("signup_email");
-    // const password = document.getElementById("signup_password");
-    // const passwordError = document.getElementById("password_error");
-
-    // const validatePassword = (password) => {
-    //     const regex = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@#$^&*!])[A-Za-z0-9\d@#$^&*!]{8,}$/;
-    //     return regex.test(password);
-    // };
-
-    // if (!validatePassword(password.value)) {
-    //     passwordError.style.display = "block";
-    //     passwordError.innerHTML =
-    //         "Password must Contain a-zA-Z0-9@#$^*! with 8 char";
-    //     passwordError.style.color = "red"
-    //     return; 
-    // } else {
-    //     passwordError.style.display = "none";
-    // }
-
-
     const fullname = document.getElementById("signup_username");
     const email = document.getElementById("signup_email");
     const password = document.getElementById("signup_password");
