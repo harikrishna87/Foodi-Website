@@ -41,28 +41,30 @@ async function fetchPurchaseHistory(userId) {
     purchaseSnapshot.forEach((doc) => {
         const purchaseData = doc.data();
         const purchaseDate = purchaseData.purchased_at;
-        const itemNames = purchaseData.items.map(item => item.item_name).join(", ");
         const paymentMethod = purchaseData.payment_method;
         const purchaseAmount = purchaseData.total_amount;
+        const amount = purchaseData.quantity * purchaseData.total_amount;
         const statusClass = "order-placed";
-
+    
+        const itemDetails = purchaseData.items.map((item, index) => `${index + 1}.   <img src="${item.image}" class="img"/> : ${item.item_name} <br> ${item.quantity} x ₹ ${item.amount} = ₹ ${item.total}`).join("<br><br>");
+    
         const row = `
             <tr class="${statusClass}">
                 <td>${serialNumber}</td>
                 <td>${purchaseDate}</td>
-                <td>${itemNames}</td>
+                <td>${itemDetails}</td>
                 <td>₹ ${purchaseAmount}</td>
                 <td>${paymentMethod}</td>
                 <td><span class="order-status">Order Placed</span></td>
             </tr>
         `;
-
+    
         purchaseHistoryTableBody.innerHTML += row;
         serialNumber++;
     });
+    
 }
 
-// Initialize Purchase History on Page Load
 onAuthStateChanged(auth, (user) => {
     if (user) {
         const userId = user.uid;
