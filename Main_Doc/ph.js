@@ -30,7 +30,7 @@ async function fetchPurchaseHistory(userId) {
     if (purchaseSnapshot.empty) {
         purchaseHistoryTableBody.innerHTML = `
             <tr>
-                <td colspan="5" class="text-center">No purchase history found.</td>
+                <td colspan="6" class="text-center his">No purchase history found.</td>
             </tr>
         `;
         return;
@@ -44,7 +44,7 @@ async function fetchPurchaseHistory(userId) {
         const itemNames = purchaseData.items.map(item => item.item_name).join(", ");
         const paymentMethod = purchaseData.payment_method;
         const purchaseAmount = purchaseData.total_amount;
-        const statusClass = "order-placed"; // Order status class for styling
+        const statusClass = "order-placed";
 
         const row = `
             <tr class="${statusClass}">
