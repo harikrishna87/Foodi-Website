@@ -181,170 +181,120 @@ section {
 
 }
 
-/*Categories*/
-
-.title2 {
-  font-size: 3em;
-  font-weight: bold;
-  padding-top: 150px;
+.product {
+  color: red;
+  padding-top: 100px;
+  font-size: 20px;
 }
 
-.title2 span {
+.product1 {
+  padding-top: 10px;
+  font-size: 2.75em;
+  font-weight: bold;
+}
+
+.product1 span {
   color: rgb(54, 241, 54);
 }
 
+.products_1 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.products_1 button {
+  background-color: rgb(54, 241, 54);
+  color: white;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 12px;
+  font-size: 22px;
+  transition: transform 2s;
+}
+
+.products_1 button:hover {
+  background-color: rgb(183, 180, 180);
+}
+
+.products_1 button:active {
+  transform: scale(0.8);
+}
 .card1 {
   width: 100%;
+  height: 450px;
   border: 1px solid rgb(237, 235, 235);
   border-radius: 20px;
   margin: 20px 0px;
   transition: transform 2s;
   box-shadow: 1px 1px 10px 4px rgb(248, 246, 246);
-  height: 465px;
-}
-
-.card1:hover {
-  transform: scale(1.01);
 }
 
 .card1 img {
   width: 100%;
-  height: 200px;
+  height: 225px;
   border-radius: 20px;
 }
 
-.card1-title {
-  font-size: 20px;
+.card1 h5 {
+  padding: 0 20px;
+  font-size: 18px;
   font-weight: 500;
-  padding: 15px;
 }
 
-.card1__text {
+.card1_1 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 25px 20px 15px 20px;
+}
+
+.card1_1 h5 {
   font-size: 20px;
-  font-weight: 200;
-  padding: 10px 0px;
+  font-weight: 600;
+  padding: 0;
+  margin: 0;
 }
 
-.card1__button {
+.card1_1 p {
+  font-size: 20px;
+  font-weight: 400;
+  padding: 0 20px;
+  margin: 0;
+}
+
+.card1_2 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+}
+
+.card1_2 p {
+  font-weight: 600;
+  font-size: 20px;
+  padding: 0;
+  margin: 0;
+}
+
+.card1_2 button {
   background-color: rgb(54, 241, 54);
   color: rgb(255, 255, 255);
   border: none;
-  border-radius: 10px;
-  padding: 8px 16px;
-  margin-top: 10px;
+  font-size: 18px;
+  border-radius: 12px;
+  padding: 10px 20px;
   transition: transform 2s;
-  cursor: pointer;
 }
 
-.card1__button:hover {
+.card1_2 button:hover {
   background-color: rgb(183, 180, 180);
 }
 
-.card1__button:active {
+.card1_2 button:active {
   transform: scale(0.8);
 }
-
-/*Categories End*/
-
-/*Team Members Starts*/
-
-.title3 {
-  font-size: 3em;
-  font-weight: bold;
-  padding-top: 100px;
-  padding-bottom: 20px;
-}
-
-.title3 span {
-  color: rgb(54, 241, 54);
-}
-
-.cards-wrapper {
-  display: flex;
-  flex-wrap: wrap;
-  margin: 50px 0;
-  width: 100%;
-}
-
-.card {
-  height: 30em;
-  margin: 8px;
-  box-shadow: 0 1rem 4rem rgba(0, 0, 0, 0.4);
-  border-radius: 0.5rem;
-  position: relative;
-}
-
-.card-img-wrapper {
-  width: 100%;
-  height: 100%;
-  background-color: #262626;
-  border-radius: 0.5rem;
-}
-
-.card-img-wrapper img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  opacity: 0.8;
-  border-radius: 0.5rem;
-  transition: opacity 0.3s;
-}
-
-.card:hover .card-img-wrapper img {
-  opacity: 0.5;
-}
-
-.card-info {
-  position: absolute;
-  bottom: 0;
-  padding: 2rem;
-  text-shadow: 0 0.2rem 0.5rem rgba(0, 0, 0, 0.4);
-  opacity: 0;
-  visibility: hidden;
-  transition: all 0.3s;
-}
-
-.card:hover .card-info {
-  bottom: 2rem;
-  opacity: 1;
-  visibility: visible;
-}
-
-.card-info h2 {
-  font-size: 25px;
-  line-height: 2.5rem;
-  font-weight: 300;
-  color: #eee;
-}
-
-.card-info h3 {
-  font-size: 25px;
-  font-weight: 500;
-  color: #a52a2a;
-  margin-bottom: 1rem;
-}
-
-.card-info p {
-  font-size: 20px;
-  line-height: 1.6rem;
-  font-weight: 300;
-  color: #eee;
-  width: 80%;
-  margin-bottom: 2rem;
-}
-
-.card-info button {
-  background-color: rgb(54, 241, 54);
-  border: none;
-  font-family: "Baloo Da 2", serif;
-  font-size: 18px;
-  padding: 10px 20px;
-  color: #eee;
-  border-radius: 20px;
-  box-shadow: 0 0.1rem 0.8rem rgba(0, 0, 0, 0.4);
-}
-
-/*Team Members Ends*/
 
 /*Login Page & SignUp Page*/
 input {
@@ -462,21 +412,3 @@ input:focus {
 }
 
 /*Login & SignUp Page Ends*/
-
-.pre_loader {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: #fff; /* Background color while loading */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 9999; /* Ensure it is above other elements */
-}
-.hidden {
-  opacity: 0;
-  visibility: hidden;
-  transition: opacity 0.5s ease-out;
-}

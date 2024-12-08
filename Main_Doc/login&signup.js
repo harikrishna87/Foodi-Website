@@ -30,29 +30,7 @@ function showLoginForm() {
   loginForm.style.display = "block";
 }
 
-document.querySelector(".button__text").addEventListener("click", () => {
-  Swal.fire({
-    title: "To View More Products",
-    text: "You Need to Login",
-    icon: "warning",
-    iconColor: "red",
-    showCancelButton: true,
-    confirmButtonText: "Login Now",
-    cancelButtonText: "Cancel",
-  }).then((result) => {
-    if (result.isConfirmed) {
-      const modal = document.getElementById("my_modal_3");
-      if (modal) {
-        modal.showModal();
-      } else {
-        console.error("Modal element with ID 'loginModal' not found.");
-      }
-    }
-  });
-})
-
-
-  const buttons = document.querySelectorAll(".card1__button");
+  const buttons = document.querySelectorAll(".view_more");
   buttons.forEach(button => {
     button.addEventListener("click", function () {
       Swal.fire({

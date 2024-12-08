@@ -135,12 +135,7 @@ document.addEventListener("DOMContentLoaded", () => {
     loop: true
 });
 
-
-document.querySelector(".view_more_btn").addEventListener("click", () => {
-    window.location.href = "menu.html"
-})
-
-const menu_items = document.querySelectorAll(".menu_items");
+const menu_items = document.querySelectorAll(".card1__button");
 
 menu_items.forEach(menu => {
     menu.addEventListener("click", () => {

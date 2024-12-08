@@ -377,3 +377,9 @@ table th {
         transition: transform 2s;
     }
 }
+
+#error-message {
+    color: red;
+    font-size: 14px;
+    display: none;
+  }
