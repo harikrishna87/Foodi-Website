@@ -46,7 +46,7 @@ async function fetchPurchaseHistory(userId) {
         const amount = purchaseData.quantity * purchaseData.total_amount;
         const statusClass = "order-placed";
     
-        const itemDetails = purchaseData.items.map((item, index) => `${index + 1}.   <img src="${item.image}" class="img"/> : ${item.item_name} <br> ${item.quantity} x ₹ ${item.amount} = ₹ ${item.total}`).join("<br><br>");
+        const itemDetails = purchaseData.items.map((item) => `<img src="${item.image}" class="img"/> : ${item.item_name} <br> ${item.quantity} x ₹ ${item.amount} = ₹ ${item.total}`).join("<br><br>");
     
         const row = `
             <tr class="${statusClass}">
