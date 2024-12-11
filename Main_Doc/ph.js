@@ -30,7 +30,7 @@ async function fetchPurchaseHistory(userId) {
     if (purchaseSnapshot.empty) {
         purchaseHistoryTableBody.innerHTML = `
             <tr>
-                <td colspan="6" class="text-center his">No purchase history found.</td>
+                <td colspan="7" class="text-center his">No purchase history found.</td>
             </tr>
         `;
         return;

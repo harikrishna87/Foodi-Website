@@ -43,7 +43,7 @@
             <div class="d-flex align-items-center justify-content-between ml-3">
               <a href="cart.html" class="btn position-relative p-1 text-gray-400">
                 <i class='bx bxs-cart' style="font-size: 30px; color: #37f70a;"></i>
-                <!-- <span class="cart-badge" id="count">0</span> -->
+                <span class="cart-badge" id="count">0</span>
               </a>
               <div class="dropdown ms-3">
                 <button class="btn p-0 border-0 user-avatar" type="button" id="userDropdown" data-bs-toggle="dropdown"
@@ -100,103 +100,18 @@
 
   <section id="categories">
     <div class="container">
+      <h3 class="product">Customer Favourites</h3>
       <h2 class="title3">Explore Our Delicious <br><span>Collections</span></h2>
-      <div class="row">
-        <div class="col-12 col-sm-6 col-md-6 col-lg-4">
-          <div class="card1 shadow-lg">
-            <img src="https://assets.zeezest.com/blogs/PROD_Veg-Food-Banner_1645021052320.jpg" alt="">
-            <div class="card1-title">
-              <div class="card2 d-flex justify-content-between align-items-center">
-                <h3 class="card1__title" style="color: Red;">Veggies</h3>
-                <p> 4.2 <i class='bx bxs-star' style='color:yellow'></i></p>
-              </div>
-              <p class="p-1" style="color: cadetblue;">10+ Products</p>
-              <p class="card1__text">Fresh greens, bursting with natural flavor!</p>
-              <button class="card1__button">View More</button>
-            </div>
-          </div>
+      <div class="container">
+        <div class="cards_container">
+        <div class="row" id="cards"></div>
+        <div class="pagination-container">
+            <nav>
+                <ul id="pagination" class="pagination justify-content-center"></ul>
+            </nav>
         </div>
-
-        <div class="col-12 col-sm-6 col-md-6 col-lg-4">
-          <div class="card1 shadow-lg">
-            <img
-              src="https://st4.depositphotos.com/1008311/29999/i/450/depositphotos_299996728-stock-photo-south-indian-variety-non-veg.jpg"
-              alt="">
-            <div class="card1-title">
-              <div class="card2 d-flex justify-content-between align-items-center">
-                <h3 class="card1__title" style="color: Red;">Non-Veg</h3>
-                <p> 4.4 <i class='bx bxs-star' style='color:yellow'></i></p>
-              </div>
-              <p class="p-1" style="color: cadetblue;">10+ Products</p>
-              <p class="card1__text">Juicy bites, crafted to perfection always!</p>
-              <button class="card1__button">View More</button>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-12 col-sm-6 col-md-6 col-lg-4">
-          <div class="card1 shadow-lg ">
-            <img
-              src="https://tropolite.com/media/blogs/delicious-christmas-finger-food-arrangement_23-2151101927_aOck2e5.jpeg"
-              alt="">
-            <div class="card1-title">
-              <div class="card2 d-flex justify-content-between align-items-center">
-                <h3 class="card1__title" style="color: Red;">Desserts</h3>
-                <p> 4.1 <i class='bx bxs-star' style='color:yellow'></i></p>
-              </div>
-              <p class="p-1" style="color: cadetblue;">7+ Products</p>
-              <p class="card1__text">Sweet treats, happiness in every single bite!</p>
-              <button class="card1__button">View More</button>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-12 col-sm-6 col-md-6 col-lg-4">
-          <div class="card1 shadow-lg">
-            <img src="https://img.pikbest.com/origin/10/14/03/204pIkbEsT3Yj.jpg!w700wp" alt="">
-            <div class="card1-title">
-              <div class="card2 d-flex justify-content-between align-items-center">
-                <h3 class="card1__title" style="color: Red;">Pizzas</h3>
-                <p> 3.9 <i class='bx bxs-star' style='color:yellow'></i></p>
-              </div>
-              <p class="p-1" style="color: cadetblue;">5+ Products</p>
-              <p class="card1__text">Hot slices, love at first delicious bite!</p>
-              <button class="card1__button">View More</button>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-12 col-sm-6 col-md-6 col-lg-4">
-          <div class="card1 shadow-lg">
-            <img src="https://nutritionmeetsfoodscience.com/wp-content/uploads/2019/04/iStock-157671800-1-1024x853.jpg"
-              alt="">
-            <div class="card1-title">
-              <div class="card2 d-flex justify-content-between align-items-center">
-                <h3 class="card1__title" style="color: Red;">IceCreams</h3>
-                <p> 4.4 <i class='bx bxs-star' style='color:yellow'></i></p>
-              </div>
-              <p class="p-1" style="color: cadetblue;">6+ Products</p>
-              <p class="card1__text">Cool scoops, happiness in every creamy bite!</p>
-              <button class="card1__button">View More</button>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-12 col-sm-6 col-md-6 col-lg-4">
-          <div class="card1 shadow-lg">
-            <img src="https://www.lacademie.com/wp-content/uploads/2022/04/fruit-juices-drinks.jpg" alt="">
-            <div class="card1-title">
-              <div class="card2 d-flex justify-content-between align-items-center">
-                <h3 class="card1__title" style="color: Red;">Drinks</h3>
-                <p> 3.8 <i class='bx bxs-star' style='color:yellow'></i></p>
-              </div>
-              <p class="p-1" style="color: cadetblue;">8+ Products</p>
-              <p class="card1__text">Sip happiness, refresh your soul every time!</p>
-              <button class="card1__button">View More</button>
-            </div>
-          </div>
-        </div>
-      </div>
+    </div>
+    </div>
     </div>
   </section>
 
