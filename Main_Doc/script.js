@@ -126,8 +126,8 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 });
 
-  /*============== Typing Animation ===============*/
-  var typed = new Typed(".typing", {
+/*============== Typing Animation ===============*/
+var typed = new Typed(".typing", {
     strings: ["", " Anuradha Restaurant "],
     typeSpeed: 100,
     backSpeed: 100,
@@ -135,13 +135,10 @@ document.addEventListener("DOMContentLoaded", () => {
     loop: true
 });
 
-const menu_items = document.querySelectorAll(".card1__button");
-
-menu_items.forEach(menu => {
-    menu.addEventListener("click", () => {
-        window.location.href = "menu.html"
-    })
-})
+const menu_items = document.querySelector(".card1__button");
+menu_items.addEventListener("click", () => {
+    window.location.href = "menu.html"
+});
 
 // Cards Container and Pagination
 const cardsContainer = document.getElementById("cards");
@@ -151,96 +148,96 @@ let filteredProducts = [];
 
 async function cardsContainerInit() {
     try {
-        products =  [
-                {
-                  "id": 1,
-                  "title": "Chicken Biryani",
-                  "price": 199,
-                  "category": "NonVeg",
-                  "image": "https://media.istockphoto.com/id/1345624336/photo/chicken-biriyani.webp?a=1&b=1&s=612x612&w=0&k=20&c=a8j_p9BkWtsSX7WkcqeetigH8PYWXGayIGto9GiehNY=",
-                  "rating": {
+        products = [
+            {
+                "id": 1,
+                "title": "Chicken Biryani",
+                "price": 199,
+                "category": "NonVeg",
+                "image": "https://media.istockphoto.com/id/1345624336/photo/chicken-biriyani.webp?a=1&b=1&s=612x612&w=0&k=20&c=a8j_p9BkWtsSX7WkcqeetigH8PYWXGayIGto9GiehNY=",
+                "rating": {
                     "rate": 4.2,
                     "count": 120
-                  }
-                },
-                {
-                    "id": 2,
-                    "title": "Sambar",
-                    "price": 49,
-                    "category": "Veg",
-                    "image": "https://media.istockphoto.com/id/1452451511/photo/sambar-a-mixed-vegetarian-curry-arranged-on-a-wooden-bowl-on-a-wooden-background-sambar-is.jpg?s=612x612&w=0&k=20&c=ixBVSR6wjq4-015bbLJuUbAk5lRB3utAwKVVBMmo-E4=",
-                    "rating": {
-                      "rate": 3.9,
-                      "count": 120
-                    }
-                  },
-                  {
-                    "id": 3,
-                    "title": "Fruits",
-                    "price": 249,
-                    "category": "Veg",
-                    "image": "https://media.istockphoto.com/id/1273378551/photo/set-of-summer-fruits-and-berries-in-wooden-serving.jpg?s=612x612&w=0&k=20&c=XtJFQDgpV_AsG3aFzo3FVN2pmbey7h0jWHMzlHWJ5Kk=",
-                    "rating": {
-                      "rate": 3.9,
-                      "count": 470
-                    }
-                  },
-                  {
-                    "id": 4,
-                    "title": "Red Velvet Cake",
-                    "price": 550,
-                    "category": "Desserts",
-                    "image": "https://media.istockphoto.com/id/1414371761/photo/close-up-image-of-whole-red-velvet-cake-covered-with-butter-cream-decorated-with-piped-icing.jpg?s=612x612&w=0&k=20&c=rAmznB1366xVy7XS4HFlyA1hV5oE8-foTiRgN7aBzpQ=",
-                    "rating": {
-                      "rate": 4.5,
-                      "count": 319
-                    }
-                  },
-                  {
-                    "id": 5,
-                    "title": "Gulab Jamun",
-                    "price": 89,
-                    "category": "Desserts",
-                    "image": "https://media.istockphoto.com/id/1194662949/photo/indian-dessert-or-sweet-dish-gulab-jamun-in-white-bowl-on-yellow-background.jpg?s=612x612&w=0&k=20&c=XAOQkQC-Mu-XXviGtWU6NTz8vZzT1sY0oaJQ4jWo2Fo=",
-                    "rating": {
-                      "rate": 4.1,
-                      "count": 340
-                    }
-                  },
-                  {
-                    "id": 6,
-                    "title": "Mango IceCream",
-                    "price": 179,
-                    "category": "IceCream",
-                    "image": "https://hot-thai-kitchen.com/wp-content/uploads/2016/06/mango-ice-cream-blog.jpg",
-                    "rating": {
-                      "rate": 3.8,
-                      "count": 250
-                    }
-                  },
-                  {
-                    "id": 7,
-                    "title": "Mango Juice",
-                    "price": 40,
-                    "category": "Fruit Juice",
-                    "image": "https://cdn1.foodviva.com/static-content/food-images/juice-recipes/mango-juice/mango-juice.jpg",
-                    "rating": {
-                      "rate": 3.6,
-                      "count": 145
-                    }
-                  },
-                  {
-                    "id": 8,
-                    "title": "Chicken Pizza",
-                    "price": 249,
-                    "category": "Pizzas",
-                    "image": "https://www.yummytummyaarthi.com/wp-content/uploads/2015/11/chicken-pizza-1-500x500.jpeg",
-                    "rating": {
-                      "rate": 2.9,
-                      "count": 340
-                    }
-                  }
-              ]
+                }
+            },
+            {
+                "id": 2,
+                "title": "Sambar",
+                "price": 49,
+                "category": "Veg",
+                "image": "https://media.istockphoto.com/id/1452451511/photo/sambar-a-mixed-vegetarian-curry-arranged-on-a-wooden-bowl-on-a-wooden-background-sambar-is.jpg?s=612x612&w=0&k=20&c=ixBVSR6wjq4-015bbLJuUbAk5lRB3utAwKVVBMmo-E4=",
+                "rating": {
+                    "rate": 3.9,
+                    "count": 120
+                }
+            },
+            {
+                "id": 3,
+                "title": "Fruits",
+                "price": 249,
+                "category": "Veg",
+                "image": "https://media.istockphoto.com/id/1273378551/photo/set-of-summer-fruits-and-berries-in-wooden-serving.jpg?s=612x612&w=0&k=20&c=XtJFQDgpV_AsG3aFzo3FVN2pmbey7h0jWHMzlHWJ5Kk=",
+                "rating": {
+                    "rate": 3.9,
+                    "count": 470
+                }
+            },
+            {
+                "id": 4,
+                "title": "Red Velvet Cake",
+                "price": 550,
+                "category": "Desserts",
+                "image": "https://media.istockphoto.com/id/1414371761/photo/close-up-image-of-whole-red-velvet-cake-covered-with-butter-cream-decorated-with-piped-icing.jpg?s=612x612&w=0&k=20&c=rAmznB1366xVy7XS4HFlyA1hV5oE8-foTiRgN7aBzpQ=",
+                "rating": {
+                    "rate": 4.5,
+                    "count": 319
+                }
+            },
+            {
+                "id": 5,
+                "title": "Gulab Jamun",
+                "price": 89,
+                "category": "Desserts",
+                "image": "https://media.istockphoto.com/id/1194662949/photo/indian-dessert-or-sweet-dish-gulab-jamun-in-white-bowl-on-yellow-background.jpg?s=612x612&w=0&k=20&c=XAOQkQC-Mu-XXviGtWU6NTz8vZzT1sY0oaJQ4jWo2Fo=",
+                "rating": {
+                    "rate": 4.1,
+                    "count": 340
+                }
+            },
+            {
+                "id": 6,
+                "title": "Mango IceCream",
+                "price": 179,
+                "category": "IceCream",
+                "image": "https://hot-thai-kitchen.com/wp-content/uploads/2016/06/mango-ice-cream-blog.jpg",
+                "rating": {
+                    "rate": 3.8,
+                    "count": 250
+                }
+            },
+            {
+                "id": 7,
+                "title": "Mango Juice",
+                "price": 40,
+                "category": "Fruit Juice",
+                "image": "https://cdn1.foodviva.com/static-content/food-images/juice-recipes/mango-juice/mango-juice.jpg",
+                "rating": {
+                    "rate": 3.6,
+                    "count": 145
+                }
+            },
+            {
+                "id": 8,
+                "title": "Chicken Pizza",
+                "price": 249,
+                "category": "Pizzas",
+                "image": "https://www.yummytummyaarthi.com/wp-content/uploads/2015/11/chicken-pizza-1-500x500.jpeg",
+                "rating": {
+                    "rate": 2.9,
+                    "count": 340
+                }
+            }
+        ]
         filteredProducts = [...products];
         renderCards();
     } catch (error) {
