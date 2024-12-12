@@ -145,17 +145,12 @@ menu_items.forEach(menu => {
 
 // Cards Container and Pagination
 const cardsContainer = document.getElementById("cards");
-const paginationContainer = document.getElementById("pagination");
-const itemsPerPage = 8;
-let currentPage = 1;
 let products = [];
 let filteredProducts = [];
 
 
 async function cardsContainerInit() {
     try {
-        // const response = await fetch("https://json-data-b2bn.onrender.com/products");
-        // products = await response.json();
         products =  [
                 {
                   "id": 1,
@@ -169,18 +164,7 @@ async function cardsContainerInit() {
                   }
                 },
                 {
-                  "id": 2,
-                  "title": "Mutton Biryani",
-                  "price": 299,
-                  "category": "NonVeg",
-                  "image": "https://media.istockphoto.com/id/1430345748/photo/biryani-overhead-view.webp?a=1&b=1&s=612x612&w=0&k=20&c=St2EEaWdaC6cLC6oSIV2wwo8taRRyta7H90NeYSWojc=",
-                  "rating": {
-                    "rate": 4.1,
-                    "count": 259
-                  }
-                },
-                {
-                    "id": 3,
+                    "id": 2,
                     "title": "Sambar",
                     "price": 49,
                     "category": "Veg",
@@ -191,18 +175,7 @@ async function cardsContainerInit() {
                     }
                   },
                   {
-                    "id": 4,
-                    "title": "Gobi Manchurian",
-                    "price": 129,
-                    "category": "Veg",
-                    "image": "https://media.istockphoto.com/id/1333972712/photo/cabbage-manchurian.jpg?s=612x612&w=0&k=20&c=eKpR7SsmS-UXJKoW5vUNyC0O5ZPK3fMGkCts6uUbc4E=",
-                    "rating": {
-                      "rate": 4.1,
-                      "count": 259
-                    }
-                  },
-                  {
-                    "id": 5,
+                    "id": 3,
                     "title": "Fruits",
                     "price": 249,
                     "category": "Veg",
@@ -213,7 +186,7 @@ async function cardsContainerInit() {
                     }
                   },
                   {
-                    "id": 6,
+                    "id": 4,
                     "title": "Red Velvet Cake",
                     "price": 550,
                     "category": "Desserts",
@@ -224,18 +197,7 @@ async function cardsContainerInit() {
                     }
                   },
                   {
-                    "id": 7,
-                    "title":"Butter Sortch Cake",
-                    "price": 450,
-                    "category": "Desserts",
-                    "image": "https://media.istockphoto.com/id/522381472/photo/modern-cake-covered-with-chocolate-glyassazhem.jpg?s=612x612&w=0&k=20&c=E-lZtw3xfNb76n0tXQbtwf8ofRiAjT_eykbu_uqMtMA=",
-                    "rating": {
-                      "rate": 4.4,
-                      "count": 400
-                    }
-                  },
-                  {
-                    "id": 8,
+                    "id": 5,
                     "title": "Gulab Jamun",
                     "price": 89,
                     "category": "Desserts",
@@ -246,29 +208,7 @@ async function cardsContainerInit() {
                     }
                   },
                   {
-                    "id": 9,
-                    "title": "Rasmalai",
-                    "price": 210,
-                    "category": "Desserts",
-                    "image": "https://media.istockphoto.com/id/1318087021/photo/rasmalai-rossomalai-roshmolai-rasamalei-is-a-very-popular-indian-dessert-its-a-similar-dish.jpg?s=612x612&w=0&k=20&c=cCu6aSeO8RCGCM9r5zfAICe3-n1-Nc62ozJxlb5gCZw=",
-                    "rating": {
-                      "rate": 3.8,
-                      "count": 679
-                    }
-                  },
-                  {
-                    "id": 10,
-                    "title": "Vennela IceCream",
-                    "price": 150,
-                    "category": "IceCream",
-                    "image": "https://media.istockphoto.com/id/948032164/photo/ice-cream.jpg?s=612x612&w=0&k=20&c=EWy8rEsWVuv67-DWH0a-rAlI7GSy1FAU237yg1TwFKg=",
-                    "rating": {
-                      "rate": 3.9,
-                      "count": 400
-                    }
-                  },
-                  {
-                    "id": 11,
+                    "id": 6,
                     "title": "Mango IceCream",
                     "price": 179,
                     "category": "IceCream",
@@ -279,7 +219,7 @@ async function cardsContainerInit() {
                     }
                   },
                   {
-                    "id": 12,
+                    "id": 7,
                     "title": "Mango Juice",
                     "price": 40,
                     "category": "Fruit Juice",
@@ -290,18 +230,7 @@ async function cardsContainerInit() {
                     }
                   },
                   {
-                    "id": 13,
-                    "title": "Apple Juice",
-                    "price": 60,
-                    "category": "Fruit Juice",
-                    "image": "https://www.alphafoodie.com/wp-content/uploads/2021/11/Apple-Juice-Square.jpeg",
-                    "rating": {
-                      "rate": 3.9,
-                      "count": 120
-                    }
-                  },
-                  {
-                    "id": 14,
+                    "id": 8,
                     "title": "Chicken Pizza",
                     "price": 249,
                     "category": "Pizzas",
@@ -310,36 +239,19 @@ async function cardsContainerInit() {
                       "rate": 2.9,
                       "count": 340
                     }
-                  },
-                  {
-                    "id": 15,
-                    "title": "Corn Pizza",
-                    "price": 39.99,
-                    "category": "Pizzas",
-                    "image": "https://img.thecdn.in/285347/1683898758033_SKU-0672_0.jpg?format=webp",
-                    "rating": {
-                      "rate": 3.8,
-                      "count": 679
-                    }
                   }
               ]
         filteredProducts = [...products];
-        renderPagination();
-        renderCards(currentPage);
+        renderCards();
     } catch (error) {
         console.error("Error fetching products:", error);
     }
 }
 
-// Render Cards
-function renderCards(page) {
-    const startIndex = (page - 1) * itemsPerPage;
-    const endIndex = startIndex + itemsPerPage;
-    const currentProducts = filteredProducts.slice(startIndex, endIndex);
-
+function renderCards() {
     cardsContainer.innerHTML = "";
 
-    currentProducts.forEach((product) => {
+    filteredProducts.forEach((product) => {
         const cardHTML = `
             <div class="col-12 col-sm-6 col-lg-3 mb-4">
                 <div class="cards_content">
@@ -362,6 +274,7 @@ function renderCards(page) {
         button.addEventListener("click", addToCart);
     });
 }
+
 
 // Add to Cart
 async function addToCart(event) {
@@ -449,53 +362,6 @@ window.addEventListener('load', async () => {
         await updateCartCount(userId);
     }
 });
-
-// Render pagination for products
-function renderPagination() {
-    const totalPages = Math.ceil(filteredProducts.length / itemsPerPage);
-    paginationContainer.innerHTML = "";
-
-    const pagesToShow = 5;
-    const startPage = Math.floor((currentPage - 1) / pagesToShow) * pagesToShow + 1;
-    const endPage = Math.min(startPage + pagesToShow - 1, totalPages);
-
-    const prevButton = `
-        <li class="page-item ${currentPage === 1 ? "disabled" : ""}">
-            <a class="page-link" href="#" data-page="${currentPage - 1}">Previous</a>
-        </li>
-    `;
-    paginationContainer.innerHTML += prevButton;
-
-    for (let i = startPage; i <= endPage; i++) {
-        const pageItem = `
-            <li class="page-item ${i === currentPage ? "active" : ""}">
-                <a class="page-link" href="#" data-page="${i}">${i}</a>
-            </li>
-        `;
-        paginationContainer.innerHTML += pageItem;
-    }
-
-    const nextButton = `
-        <li class="page-item">
-            <a class="page-link" href="#" data-page="${currentPage === totalPages ? 1 : currentPage + 1}">Next</a>
-        </li>
-    `;
-    paginationContainer.innerHTML += nextButton;
-
-    document.querySelectorAll(".page-link").forEach((link) => {
-        link.addEventListener("click", (e) => {
-            e.preventDefault();
-            const page = parseInt(e.target.getAttribute("data-page"));
-            if (page >= 1 && page <= totalPages) {
-                currentPage = page;
-            } else if (page === 1) {
-                currentPage = 1;
-            }
-            renderCards(currentPage);
-            renderPagination();
-        });
-    });
-}
 
 // Initialize
 cardsContainerInit();
