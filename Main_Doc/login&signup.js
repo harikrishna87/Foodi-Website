@@ -6,10 +6,6 @@ function showModal() {
   modal.showModal();
 }
 
-setTimeout(() => {
-  showModal();
-}, 15000);
-
 function closeModal() {
   modal.close();
 }
