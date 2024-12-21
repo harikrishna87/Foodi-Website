@@ -1,4 +1,4 @@
-Anuradha Restaurant Web Application
+"Anuradha Restaurant Web Application"
 
 Overview
 This web application serves as a robust platform for restaurant management, offering a seamless user experience for browsing, selecting, and purchasing food items. Built using modern web technologies and frameworks, the application provides a fully functional, interactive interface with advanced features like authentication, dynamic pricing, and product filtering.
@@ -50,6 +50,12 @@ Home Page:
 The home page serves as the central hub for restaurant information. Users can:
 - View testimonials, services, and customer favorites.
 - Add items to the cart with real-time alerts.
+  
+User Profile:
+The avatar dropdown allows users to:
+- View their details.
+- Upload a profile picture for personalization.
+
 
 Menu Page:
 The menu page categorizes items for easy browsing. Features include:
@@ -70,10 +76,6 @@ A payment process built with HTML, CSS, and Bootstrap offers:
 Order Page:
 Displays all purchased items in a table format, providing an organized view of past orders.
 
-User Profile:
-The avatar dropdown allows users to:
-- View their details.
-- Upload a profile picture for personalization.
 
 Installation
 1. Clone the repository:
@@ -91,6 +93,6 @@ Future Enhancements
 - Add user ratings and reviews for menu items.
 - Implement push notifications for order updates.
 
-Conclusion
+Conclusion: 
 This project demonstrates a fully functional restaurant management system with advanced features like authentication, filtering, pagination, dynamic pricing, and an interactive payment system. The integration of modern frameworks and libraries ensures a responsive and user-friendly experience, making it a reliable solution for restaurant operations.
 
