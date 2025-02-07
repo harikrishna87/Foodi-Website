@@ -22,8 +22,6 @@ const app = initializeApp(firebaseConfig);
 const auth = getAuth();
 const db = getFirestore();
 
-
-
 const BLOCK_TIME = 2 * 60 * 60 * 1000;
 
 function shouldBlockBackNavigation() {
@@ -40,6 +38,12 @@ function saveLoginTimestamp() {
 }
 
 window.onload = function () {
+    const isLoggedIn = localStorage.getItem("loggedInUserId");
+    if ((window.location.pathname === "/" || window.location.pathname.includes("index.html")) && isLoggedIn) {
+        window.location.replace("home.html");
+        return;
+    }
+
     if (shouldBlockBackNavigation()) {
         history.pushState(null, null, window.location.href);
         sessionStorage.setItem("blockBack", "true");
@@ -51,6 +55,13 @@ window.onload = function () {
         }
     };
 };
+
+function logout() {
+    localStorage.removeItem("loggedInUserId");
+    localStorage.removeItem("loginTimestamp");
+    window.location.href = "index.html";
+}
+
 
 
 // Show message function
