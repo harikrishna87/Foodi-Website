@@ -22,7 +22,7 @@ const app = initializeApp(firebaseConfig);
 const auth = getAuth();
 const db = getFirestore();
 
-const BLOCK_TIME = 2 * 60 * 60 * 1000;
+const BLOCK_TIME = 24 * 60 * 60 * 1000;
 
 function shouldBlockBackNavigation() {
     const loginTime = localStorage.getItem("loginTimestamp");
