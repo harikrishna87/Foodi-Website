@@ -35,18 +35,6 @@ const db = getFirestore();
 //     };
 // };
 
-// Redirect to home page if already logged in
-if ((window.location.pathname === "/" || window.location.pathname.includes("index.html")) && localStorage.getItem("loggedInUserId")) {
-    window.location.replace("home.html");
-}
-
-// Prevent navigating back to the login page after login
-window.onload = function () {
-    history.pushState(null, null, window.location.href);
-    window.onpopstate = function () {
-        location.replace(location.href);
-    };
-};
 
 
 // Show Message Function
@@ -166,6 +154,19 @@ login.addEventListener("click", (event) => {
             password.value = '';
         });
 });
+
+// Redirect to home page if already logged in
+if ((window.location.pathname === "/" || window.location.pathname.includes("index.html")) && localStorage.getItem("loggedInUserId")) {
+    window.location.replace("home.html");
+}
+
+// Prevent navigating back to the login page after login
+window.onload = function () {
+    history.pushState(null, null, window.location.href);
+    window.onpopstate = function () {
+        location.replace(location.href);
+    };
+};
 
 // Logout function
 function logout() {
