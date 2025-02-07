@@ -17,12 +17,11 @@ const firebaseConfig = {
     appId: "1:328659694803:web:ad569d146b5926c412d026"
 };
 
-// Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const auth = getAuth();
 const db = getFirestore();
 
-const BLOCK_TIME = 24 * 60 * 60 * 1000;
+const BLOCK_TIME = 3 * 60 * 60 * 1000;
 
 function shouldBlockBackNavigation() {
     const loginTime = localStorage.getItem("loginTimestamp");
@@ -37,12 +36,26 @@ function saveLoginTimestamp() {
     localStorage.setItem("loginTimestamp", Date.now().toString());
 }
 
+function autoLogout() {
+    const loginTime = localStorage.getItem("loginTimestamp");
+    if (loginTime) {
+        const elapsedTime = Date.now() - parseInt(loginTime, 10);
+        if (elapsedTime >= BLOCK_TIME) {
+            localStorage.removeItem("loggedInUserId");
+            localStorage.removeItem("loginTimestamp");
+            window.location.href = "index.html";
+        }
+    }
+}
+
 window.onload = function () {
     const isLoggedIn = localStorage.getItem("loggedInUserId");
     if ((window.location.pathname === "/" || window.location.pathname.includes("index.html")) && isLoggedIn) {
         window.location.replace("home.html");
         return;
     }
+
+    autoLogout();
 
     if (shouldBlockBackNavigation()) {
         history.pushState(null, null, window.location.href);
@@ -59,10 +72,8 @@ window.onload = function () {
 function logout() {
     localStorage.removeItem("loggedInUserId");
     localStorage.removeItem("loginTimestamp");
-    window.location.href = "index.html";
+    window.location.href = "index.html"; 
 }
-
-
 
 // Show message function
 function showmessage(message, divId) {
