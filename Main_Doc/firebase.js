@@ -168,12 +168,6 @@ loginBtn.addEventListener("click", (event) => {
         });
 });
 
-// Logout function
-function logout() {
-    localStorage.removeItem("loggedInUserId");
-    location.replace("index.html");
-}
-
 // Toggle password visibility for login form
 document.getElementById('icon').addEventListener('click', function () {
     const passwordField = document.getElementById('password');
