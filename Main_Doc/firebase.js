@@ -22,21 +22,36 @@ const app = initializeApp(firebaseConfig);
 const auth = getAuth();
 const db = getFirestore();
 
-// Prevent navigating back to login page after login
+
+
+const BLOCK_TIME = 2 * 60 * 60 * 1000;
+
+function shouldBlockBackNavigation() {
+    const loginTime = localStorage.getItem("loginTimestamp");
+    if (loginTime) {
+        const elapsedTime = Date.now() - parseInt(loginTime, 10);
+        return elapsedTime < BLOCK_TIME;
+    }
+    return false;
+}
+
+function saveLoginTimestamp() {
+    localStorage.setItem("loginTimestamp", Date.now().toString());
+}
+
 window.onload = function () {
-    if (localStorage.getItem("loggedInUserId")) {
-        location.replace("home.html");
+    if (shouldBlockBackNavigation()) {
+        history.pushState(null, null, window.location.href);
+        sessionStorage.setItem("blockBack", "true");
     }
 
-    sessionStorage.setItem("blockBack", "true");
-    history.pushState(null, null, window.location.href);
-
     window.onpopstate = function () {
-        if (sessionStorage.getItem("blockBack") === "true") {
-            location.replace("home.html");
+        if (sessionStorage.getItem("blockBack") === "true" && shouldBlockBackNavigation()) {
+            location.replace(window.location.href);
         }
     };
 };
+
 
 // Show message function
 function showmessage(message, divId) {
