@@ -13,6 +13,9 @@
   <link rel="stylesheet" href="./styles.css">
   <script type="module" src="../Main_Doc/firebase.js"></script>
   <link rel="shortcut icon" href="../images/logo1.png" type="image/x-icon">
+  <meta http-equiv="Cache-Control" content="no-store, no-cache, must-revalidate, max-age=0">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="0">
 </head>
 
 <body>
@@ -22,30 +25,30 @@
     <div class="min-h-full">
       <nav class="navbar navbar-expand-md">
         <div class="container-fluid px-4">
-  
+
           <a class="navbar-brand" href="#">
             <img src="../images/logo.png" alt="Your Company" width="180px">
           </a>
-  
+
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
             data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
             aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
-  
+
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav d-flex justify-content-center align-items-center mx-auto">
               <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
               <li class="nav-item"><a class="nav-link" href="#products">Customer Favourites</a></li>
             </ul>
-  
+
             <button id="login_btn" onclick="showModal()">Login</button>
           </div>
         </div>
       </nav>
     </div>
   </header>
-  
+
   <section id="home">
     <div class="container">
       <div class="row">
@@ -65,18 +68,19 @@
   </section>
 
 
-    <section id="products">
+  <section id="products">
     <div class="container">
       <h3 class="product">Customer Favourites</h3>
-     <div class="products_1">
-      <h2 class="product1">Standout Dishes From <br><span>Our Menu</span></h2>
-      <button class="view_more">View More</button>
-     </div>
+      <div class="products_1">
+        <h2 class="product1">Standout Dishes From <br><span>Our Menu</span></h2>
+        <button class="view_more">View More</button>
+      </div>
       <div class="row">
         <div class="col-12 col-sm-6 col-lg-3">
           <div class="card1 shadow-lg">
-            <img src="https://media.istockphoto.com/id/1345624336/photo/chicken-biriyani.webp?a=1&b=1&s=612x612&w=0&k=20&c=a8j_p9BkWtsSX7WkcqeetigH8PYWXGayIGto9GiehNY=" alt=""
-              class="card-img-top">
+            <img
+              src="https://media.istockphoto.com/id/1345624336/photo/chicken-biriyani.webp?a=1&b=1&s=612x612&w=0&k=20&c=a8j_p9BkWtsSX7WkcqeetigH8PYWXGayIGto9GiehNY="
+              alt="" class="card-img-top">
             <div class="card1_1">
               <h5>C_Biryani</h5>
               <p style="color: green;"> <i class='bx bxs-star' style="color: yellow;"></i> 4.0</p>
@@ -107,8 +111,9 @@
 
         <div class="col-12 col-sm-6 col-lg-3">
           <div class="card1 shadow-lg">
-            <img src="https://i.ytimg.com/vi/MvxFL0JN1lE/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLAj4PSmvl4ZvoPLFE_WdfojzRxcVw" alt=""
-              class="card-img-top">
+            <img
+              src="https://i.ytimg.com/vi/MvxFL0JN1lE/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLAj4PSmvl4ZvoPLFE_WdfojzRxcVw"
+              alt="" class="card-img-top">
             <div class="card1_1">
               <h5>Chicken 65</h5>
               <p style="color: green;"> <i class='bx bxs-star' style="color: yellow;"></i> 4.1</p>
@@ -173,8 +178,8 @@
 
         <div class="col-12 col-sm-6 col-lg-3">
           <div class="card1 shadow-lg">
-            <img src="https://www.indianhealthyrecipes.com/wp-content/uploads/2022/03/butterscotch-ice-cream-recipe.jpg" alt=""
-              class="card-img-top">
+            <img src="https://www.indianhealthyrecipes.com/wp-content/uploads/2022/03/butterscotch-ice-cream-recipe.jpg"
+              alt="" class="card-img-top">
             <div class="card1_1">
               <h5>ButterScotch</h5>
               <p style="color: green;"> <i class='bx bxs-star' style="color: yellow;"></i> 3.8</p>
@@ -215,7 +220,7 @@
             <img src="../images/logo.png" width="200px" />
           </h6>
           <p>
-              Dive into Delights Of Delectable Food
+            Dive into Delights Of Delectable Food
           </p>
         </div>
         <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
@@ -289,14 +294,16 @@
             <input type="text" id="email" class="p-2 mb-2" value="User@gmail.com" required>
 
             <label for="password" class="mb-2">Enter your Password:</label>
-            <input type="password" id="password" class="p-2 mb-2" value="User@1234" required><i class="fa-solid fa-eye-slash"
-              id="icon"></i>
+            <input type="password" id="password" class="p-2 mb-2" value="User@1234" required><i
+              class="fa-solid fa-eye-slash" id="icon"></i>
 
             <button class="login-btn">Login</button>
-            <p style="text-align: center;"> Create an New Account ? <a href="#" onclick="showSignUpForm()">Click Here</a>
+            <p style="text-align: center;"> Create an New Account ? <a href="#" onclick="showSignUpForm()">Click
+                Here</a>
             </p>
 
-            <h3 class="text-center p-2" style="color: rgb(232, 103, 103); font-size: 20px;">Want to Login Pls Click On Login Button</h3>
+            <h3 class="text-center p-2" style="color: rgb(232, 103, 103); font-size: 20px;">Want to Login Pls Click On
+              Login Button</h3>
           </div>
         </form>
       </div>
@@ -333,9 +340,9 @@
       </div>
     </div>
   </dialog>
-  
 
- 
+
+
 
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"

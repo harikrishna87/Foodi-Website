@@ -1,4 +1,4 @@
-// Import the functions you need from the SDKs you need
+// Import the necessary Firebase functions
 import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.2/firebase-app.js";
 import {
     getAuth,
@@ -22,22 +22,23 @@ const app = initializeApp(firebaseConfig);
 const auth = getAuth();
 const db = getFirestore();
 
-// // Prevent accessing login page after successful login
-// if (window.location.pathname.includes("index.html") && localStorage.getItem("loggedInUserId")) {
-//     window.location.href = "home.html";
-// }
+// Prevent navigating back to login page after login
+window.onload = function () {
+    if (localStorage.getItem("loggedInUserId")) {
+        location.replace("home.html");
+    }
 
-// // Prevent navigating back to the login page after login
-// window.onload = function () {
-//     history.pushState(null, null, window.location.href);
-//     window.onpopstate = function () {
-//         history.go(1);
-//     };
-// };
+    sessionStorage.setItem("blockBack", "true");
+    history.pushState(null, null, window.location.href);
 
+    window.onpopstate = function () {
+        if (sessionStorage.getItem("blockBack") === "true") {
+            location.replace("home.html");
+        }
+    };
+};
 
-
-// Show Message Function
+// Show message function
 function showmessage(message, divId) {
     const messagediv = document.getElementById(divId);
     if (messagediv) {
@@ -55,145 +56,110 @@ function showmessage(message, divId) {
     }
 }
 
-// SignUp with Email and Password
-const signup = document.querySelector(".signup-btn");
-signup.addEventListener("click", (event) => {
+// Sign Up with Email and Password
+const signupBtn = document.querySelector(".signup-btn");
+signupBtn.addEventListener("click", (event) => {
     event.preventDefault();
 
-    const fullname = document.getElementById("signup_username");
-    const email = document.getElementById("signup_email");
-    const password = document.getElementById("signup_password");
+    const fullname = document.getElementById("signup_username").value.trim();
+    const email = document.getElementById("signup_email").value.trim();
+    const password = document.getElementById("signup_password").value.trim();
     const passwordError = document.getElementById("password_error");
-    const emailError = document.getElementById("email_error"); 
+    const emailError = document.getElementById("email_error");
 
-    const validateEmail = (email) => {
-        const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        return regex.test(email);
-    };
+    // Email & Password Validation
+    const validateEmail = (email) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+    const validatePassword = (password) => /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@#$^&*!])[A-Za-z0-9\d@#$^&*!]{8,}$/.test(password);
 
-    const validatePassword = (password) => {
-        const regex = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@#$^&*!])[A-Za-z0-9\d@#$^&*!]{8,}$/;
-        return regex.test(password);
-    };
-
-    if (!validateEmail(email.value)) {
-        emailError.style.display = "block";
-        emailError.innerHTML = "Please enter a valid email address (e.g., example@domain.com)";
+    if (!validateEmail(email)) {
+        emailError.textContent = "Invalid email format!";
         emailError.style.color = "red";
+        emailError.style.display = "block";
         return;
     } else {
         emailError.style.display = "none";
     }
 
-    if (!validatePassword(password.value)) {
-        passwordError.style.display = "block";
-        passwordError.innerHTML =
-            "Password must contain at least 8 char, including a-z, A-Z, 0-9, and @#$^&*!";
+    if (!validatePassword(password)) {
+        passwordError.textContent = "Password must be 8+ chars, including A-Z, 0-9, and special chars!";
         passwordError.style.color = "red";
+        passwordError.style.display = "block";
         return;
     } else {
         passwordError.style.display = "none";
     }
 
-    createUserWithEmailAndPassword(auth, email.value, password.value)
+    createUserWithEmailAndPassword(auth, email, password)
         .then((userCredentials) => {
             const user = userCredentials.user;
             const userData = {
-                Email: email.value,
-                Full_Name: fullname.value
+                Email: email,
+                Full_Name: fullname
             };
 
             showmessage("Account Created Successfully", "signupmessage");
 
-            const docRef = doc(db, "users", user.uid);
-            return setDoc(docRef, userData);
+            return setDoc(doc(db, "users", user.uid), userData);
         })
         .then(() => {
-            showLoginForm();
+            showmessage("Redirecting to login...", "signupmessage");
+            setTimeout(() => {
+                location.replace("index.html");
+            }, 2000);
         })
         .catch((error) => {
-            const errorCode = error.code;
-            if (errorCode === "auth/email-already-in-use") {
+            if (error.code === "auth/email-already-in-use") {
                 showmessage("Email already exists!", "signupmessage");
             } else {
                 showmessage("An error occurred. Please try again.", "signupmessage");
             }
-        })
-        .finally(() => {
-            fullname.value = '';
-            email.value = '';
-            password.value = '';
         });
 });
 
 // Login with Email and Password
-const login = document.querySelector(".login-btn");
-login.addEventListener("click", (event) => {
+const loginBtn = document.querySelector(".login-btn");
+loginBtn.addEventListener("click", (event) => {
     event.preventDefault();
 
-    const email = document.getElementById("email");
-    const password = document.getElementById("password");
+    const email = document.getElementById("email").value.trim();
+    const password = document.getElementById("password").value.trim();
 
-    signInWithEmailAndPassword(auth, email.value, password.value)
+    signInWithEmailAndPassword(auth, email, password)
         .then((userCredentials) => {
-            showmessage('Login is successful', 'loginmessage');
             const user = userCredentials.user;
             localStorage.setItem('loggedInUserId', user.uid);
-            window.location.href = 'home.html';
+            showmessage('Login successful!', 'loginmessage');
+            setTimeout(() => {
+                location.replace("home.html");
+            }, 2000);
         })
         .catch((error) => {
-            const errorCode = error.code;
-            if (errorCode === 'auth/invalid-credential') {
+            if (error.code === 'auth/invalid-credential') {
                 showmessage('Incorrect Email or Password', 'loginmessage');
             } else {
-                showmessage('Account does not exist!!', 'loginmessage');
+                showmessage('Account does not exist!', 'loginmessage');
             }
-        })
-        .finally(() => {
-            email.value = '';
-            password.value = '';
         });
 });
 
-// Redirect to home page if already logged in
-if ((window.location.pathname === "/" || window.location.pathname.includes("index.html")) && localStorage.getItem("loggedInUserId")) {
-    window.location.replace("home.html");
-}
-
-// Prevent navigating back to the login page after login
-window.onload = function () {
-    history.pushState(null, null, window.location.href);
-    window.onpopstate = function () {
-        location.replace(location.href);
-    };
-};
-
 // Logout function
 function logout() {
-    localStorage.removeItem("loggedInUserId"); // Remove login flag
-    window.location.href = "index.html";
+    localStorage.removeItem("loggedInUserId");
+    location.replace("index.html");
 }
 
-// Toggle password visibility in the login form
+// Toggle password visibility for login form
 document.getElementById('icon').addEventListener('click', function () {
     const passwordField = document.getElementById('password');
-    const icon = document.getElementById('icon');
-
-    if (passwordField) {
-        passwordField.type = passwordField.type === 'password' ? 'text' : 'password';
-        icon.classList.toggle('fa-eye-slash');
-        icon.classList.toggle('fa-eye');
-    }
+    this.classList.toggle('fa-eye-slash');
+    this.classList.toggle('fa-eye');
+    passwordField.type = passwordField.type === 'password' ? 'text' : 'password';
 });
 
-// Toggle password visibility in the signup form
+// Toggle password visibility for signup form
 document.getElementById('icon1').addEventListener('click', function () {
     const signupPasswordField = document.getElementById('signup_password');
-    const icon1 = document.getElementById('icon1');
-
-    if (signupPasswordField) {
-        signupPasswordField.type = signupPasswordField.type === 'password' ? 'text' : 'password';
-        icon1.classList.toggle('fa-eye-slash');
-        icon1.classList.toggle('fa-eye');
-    }
+    this.classList.toggle('fa-eye-slash');
+    this.classList.toggle('fa-eye');
+    signupPasswordField.type = signupPasswordField.type === 'password' ? 'text' : 'password';
 });
