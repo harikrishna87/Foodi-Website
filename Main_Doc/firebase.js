@@ -22,18 +22,32 @@ const app = initializeApp(firebaseConfig);
 const auth = getAuth();
 const db = getFirestore();
 
-// Prevent accessing login page after successful login
-if (window.location.pathname.includes("index.html") && localStorage.getItem("loggedInUserId")) {
-    window.location.href = "home.html";
+// // Prevent accessing login page after successful login
+// if (window.location.pathname.includes("index.html") && localStorage.getItem("loggedInUserId")) {
+//     window.location.href = "home.html";
+// }
+
+// // Prevent navigating back to the login page after login
+// window.onload = function () {
+//     history.pushState(null, null, window.location.href);
+//     window.onpopstate = function () {
+//         history.go(1);
+//     };
+// };
+
+// Redirect to home page if already logged in
+if ((window.location.pathname === "/" || window.location.pathname.includes("index.html")) && localStorage.getItem("loggedInUserId")) {
+    window.location.replace("home.html");
 }
 
 // Prevent navigating back to the login page after login
 window.onload = function () {
     history.pushState(null, null, window.location.href);
     window.onpopstate = function () {
-        history.go(1);
+        location.replace(location.href);
     };
 };
+
 
 // Show Message Function
 function showmessage(message, divId) {
