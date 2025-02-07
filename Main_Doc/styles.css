@@ -1,0 +1,424 @@
+/* Login & Signup Forms Stylings */
+
+* {
+  font-family: 'Times New Roman';
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/*Header Page*/
+header {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  box-shadow: 1px 1px 10px 4px rgb(200, 200, 200);
+  background-color: white;
+}
+
+.modal-box {
+  background-color: white;
+}
+
+section {
+  min-height: 80vh;
+}
+
+.header img {
+  width: 200px;
+}
+
+/*Header Page End*/
+
+/*Hero Section*/
+
+#home {
+  padding-top: 80px;
+}
+
+.title {
+  font-size: 3.5em;
+  font-weight: bold;
+  padding-top: 130px;
+}
+
+.title span {
+  color: rgb(54, 241, 54);
+}
+
+.title1 {
+  font-size: 26px;
+  font-weight: bold;
+  padding-top: 40px;
+}
+
+.button {
+  line-height: 1;
+  background-color: transparent;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.35em;
+  padding: 0.75em 1em;
+  padding-right: 1.25em;
+  color: #fff;
+  border: 1px solid transparent;
+  font-weight: 700;
+  border-radius: 10px;
+  font-size: 18px;
+  transition: transform 0.3s;
+  margin-top: 50px;
+  background: rgb(54, 241, 54);
+}
+
+.button__icon {
+  width: 1.5em;
+  height: 1.5em;
+}
+
+.button:hover {
+  border-color: #f4f5f2;
+  background-color: rgb(183, 180, 180);
+}
+
+.button:active {
+  transform: scale(0.98);
+}
+
+/*Hero Section Ends*/
+
+@media screen and (max-width: 426px) {
+  #login_btn {
+    padding: 7px 14px;
+    background-color: green;
+    color: white;
+    margin: 20px;
+    font-size: 13px;
+    border: none;
+    border-radius: 15px;
+  }
+
+  #home {
+    padding-top: 40px;
+  }
+
+  .header img {
+    width: 140px;
+  }
+
+  .title {
+    font-size: 2.5em;
+    font-weight: bold;
+    padding-top: 100px;
+  }
+
+  .title span {
+    color: rgb(54, 241, 54);
+  }
+
+  .title1 {
+    font-size: 24px;
+    font-weight: bold;
+    padding-top: 20px;
+  }
+
+  .title2 {
+    font-size: 2.5em;
+    font-weight: bold;
+    padding-top: 150px;
+  }
+
+  .view_more {
+    margin-top: 20px;
+  }
+}
+
+@media screen and (min-width: 426px) and (max-width: 780px) {
+  #login_btn {
+    padding: 8.5px 17px;
+    background-color: green;
+    color: white;
+    margin: 20px;
+    font-size: 15px;
+    border: none;
+    border-radius: 15px;
+  }
+
+  .header img {
+    width: 140px;
+  }
+
+  .title {
+    font-size: 3em;
+    font-weight: bold;
+    padding-top: 70px;
+  }
+
+  .title span {
+    color: rgb(54, 241, 54);
+  }
+
+  .title1 {
+    font-size: 26px;
+    font-weight: bold;
+    padding-top: 25px;
+  }
+
+  .title2 {
+    font-size: 3em;
+    font-weight: bold;
+    padding-top: 150px;
+  }
+
+}
+
+.product {
+  color: red;
+  padding-top: 150px;
+  font-size: 20px;
+}
+
+.product1 {
+  padding-top: 10px;
+  font-size: 2.75em;
+  font-weight: bold;
+}
+
+.product1 span {
+  color: rgb(54, 241, 54);
+}
+
+.products_1 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.products_1 button {
+  background-color: rgb(54, 241, 54);
+  color: white;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 12px;
+  font-size: 22px;
+  transition: transform 2s;
+}
+
+.products_1 button:hover {
+  background-color: rgb(183, 180, 180);
+}
+
+.products_1 button:active {
+  transform: scale(0.8);
+}
+
+.card1 {
+  width: 100%;
+  height: 450px;
+  border: 1px solid rgb(237, 235, 235);
+  border-radius: 20px;
+  margin: 20px 0px;
+  transition: transform 2s;
+}
+
+.card1:hover {
+  transform: scale(1.05);
+  box-shadow: 2px 2px 20px 4px rgb(221, 220, 220);
+}
+
+.card1 img {
+  width: 100%;
+  height: 225px;
+  border-radius: 20px;
+}
+
+.card1 h5 {
+  padding: 0 20px;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.card1_1 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 25px 20px 15px 20px;
+}
+
+.card1_1 h5 {
+  font-size: 20px;
+  font-weight: 600;
+  padding: 0;
+  margin: 0;
+}
+
+.card1_1 p {
+  font-size: 20px;
+  font-weight: 400;
+  padding: 0 20px;
+  margin: 0;
+}
+
+.card1_2 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+}
+
+.card1_2 p {
+  font-weight: 600;
+  font-size: 20px;
+  padding: 0;
+  margin: 0;
+}
+
+.card1_2 button {
+  background-color: rgb(54, 241, 54);
+  color: rgb(255, 255, 255);
+  border: none;
+  font-size: 18px;
+  border-radius: 12px;
+  padding: 10px 20px;
+  transition: transform 2s;
+}
+
+.card1_2 button:hover {
+  background-color: rgb(183, 180, 180);
+}
+
+.card1_2 button:active {
+  transform: scale(0.8);
+}
+
+header .navbar-nav .nav-item a {
+  text-decoration: none;
+  color: rgb(54, 241, 54);
+  padding: 15px;
+  font-size: 25px;
+  font-weight: 300;
+}
+
+header .navbar-nav .nav-item a:hover {
+  color: rgb(183, 180, 180); 
+}
+
+/*Login Page & SignUp Page*/
+input {
+  border: 1px solid black;
+  background-color: white;
+  border-radius: 8px;
+  width: 90%;
+}
+
+.fa-solid {
+  font-size: 16px;
+  padding-left: 10px;
+  color: red;
+  cursor: pointer;
+}
+
+input:focus {
+  border: 2px solid orange;
+  outline: none;
+}
+
+.messagediv {
+  background-color: rgb(54, 241, 54);
+  color: white;
+  padding: 5px 10px;
+  margin: 5px 0px;
+  width: 90%;
+  border-radius: 5px;
+  font-size: 1rem;
+  opacity: 0;
+  animation: fadeout 5s forwards;
+}
+
+.signup-btn,
+.login-btn {
+  padding: 8px 16px;
+  color: white;
+  background-color: rgb(54, 241, 54);
+  margin: 10px 0px;
+  border: none;
+  font-size: 18px;
+  border-radius: 12px;
+}
+
+.mb-2 {
+  font-size: 18px;
+  font-weight: 500;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+.icons {
+  font-weight: 500;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.icons span {
+  background-color: rgb(13, 177, 202);
+  color: white;
+  font-size: 19px;
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 15px;
+  cursor: pointer;
+}
+
+.icons i {
+  padding-right: 6px;
+}
+
+#login-form a,
+#signup-form a {
+  color: rgb(54, 241, 54);
+  font-weight: 700;
+  font-size: 17px;
+}
+
+#img {
+  width: 200px;
+  margin: 0 auto;
+}
+
+#login_btn {
+  padding: 8px 16px;
+  background-color: rgb(54, 241, 54);
+  color: white;
+  margin: 20px;
+  border: none;
+  font-size: 20px;
+  transition: transform 2s;
+  border-radius: 10px;
+}
+
+#login_btn:hover {
+  background-color: rgb(183, 180, 180);
+}
+
+#login_btn:active {
+  transform: scale(0.8);
+}
+
+.fa-eye {
+  color: rgb(54, 241, 54);
+  cursor: pointer;
+}
+
+@media screen and (max-width: 420px) {
+  input {
+    width: 87.5%;
+  }
+}
+
+/*Login & SignUp Page Ends*/

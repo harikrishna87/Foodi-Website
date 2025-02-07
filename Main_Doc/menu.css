@@ -1,0 +1,280 @@
+@import url('https://fonts.googleapis.com/css2?family=Alex+Brush&family=Clicker+Script&family=Playwrite+HR:wght@100..400&display=swap');
+
+body {
+    font-family: 'Times New Roman', Times, serif;
+}
+
+body,
+html {
+    overflow-x: hidden;
+}
+
+section {
+    min-height: 90vh;
+    padding-top: 150px;
+    padding-bottom: 30px;
+}
+  
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    width: 100%;
+    background-color: #f0f0f0;
+    box-shadow: 1px 1px 10px 4px rgb(174, 174, 174);
+}
+
+.navbar {
+    background-color: white;
+}
+
+.navbar-nav {
+    margin: 0 auto;
+}
+
+.navbar-nav .nav-link {
+    color: rgb(54, 241, 54);
+    font-size: 25px;
+}
+
+.navbar-nav .nav-link:hover {
+    color: rgb(183, 180, 180);
+}
+
+.cart-badge {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: #ef4444;
+    color: #fff;
+    font-size: 0.75rem;
+    width: 17px;
+    height: 17px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.dropdown-menu {
+    width: 18rem;
+}
+
+.ms-3 {
+    margin: 20px;
+}
+
+/* User Icon styling */
+.user-avatar img {
+    width: 2.5em;
+    height: 2.5em;
+}
+
+.nav-item a {
+    margin: 2px;
+    font-size: 20px;
+}
+
+.dropdown-item:active {
+    color: white;
+    background-color: rgb(54, 241, 54);
+    border-radius: 5px;
+}
+
+#logout:active,
+label.form-label:active {
+    color: white;
+    background-color: rgb(54, 241, 54);
+    border-radius: 5px;
+}
+
+
+.text-reset {
+    text-decoration: none;
+}
+
+.content {
+    line-height: 1.6;
+}
+
+.content h2 {
+    font-size: 3em;
+    font-weight: bold;
+    padding-top: 100px;
+}
+
+.content h2 span {
+    color: rgb(54, 241, 54);
+}
+
+.content h4 {
+    font-size: 1.5em;
+    color: #555;
+    margin-bottom: 0;
+    padding-top: 15px;
+}
+
+.pagination .page-item .page-link {
+    padding: 8px 16px;
+    background-color: rgb(54, 241, 54);
+    color: white;
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    border-radius: 10px;
+    border: none;
+    margin: 40px 7px;
+    transition: all 0.3s ease;
+}
+
+/* Active page styling */
+.pagination .page-item.active .page-link {
+    background-color: rgb(34, 181, 34);
+    font-weight: bold;
+}
+
+/* Hover effect */
+.pagination .page-item .page-link:hover {
+    background-color: rgb(34, 181, 34);
+    color: white;
+    transform: scale(1.1);
+}
+
+.cards_content {
+    height: 375px;
+    border: 1px solid rgb(183, 180, 180);
+    border-radius: 12px;
+    box-shadow: 1px 1px 10px 4px rgb(226, 226, 226);
+}
+
+.cards_content:hover{
+    box-shadow: 1px 1px 10px 4px rgb(152, 151, 151);
+    transform: scale(1.05);
+}
+
+.cards_content img {
+    width: 100%;
+    height: 225px;
+    border-radius: 12px;
+}
+
+.cards_content1 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 15px;
+}
+
+.cards_content1 h5 {
+    font-size: 20px;
+    font-weight: 600;
+    padding: 0;
+}
+
+.cards_content1 h6 {
+    font-size: 20px;
+    color: green;
+}
+
+.cards_content2 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 15px;
+}
+
+.cards_content2 h5 {
+    font-size: 20px;
+    font-weight: 500;
+    padding: 0;
+    margin: 0;
+}
+
+.cards_content2 button {
+    background-color: rgb(54, 241, 54);
+    color: white;
+    font-size: 18px;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 12px;
+}
+
+.filter {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.filter button {
+    color: rgb(54, 241, 54);
+    list-style: none;
+    padding: 25px 15px;
+    border: none;
+    background-color: transparent;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.filter button:hover {
+    color: rgb(183, 180, 180);
+}
+
+.searchfun {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.search input{
+    width: 100%;
+    border: 2px solid rgb(183, 180, 180);
+    border-radius: 8px;
+    padding: 3px 10px;
+    margin-bottom: 15px;
+}
+
+.search input:focus {
+    outline: none;
+    border-color: rgb(54, 241, 54);
+}
+
+.not_available {
+    font-size: 30px;
+    color: rgb(54, 241, 54);
+    font-weight: 500;
+    text-align: center;
+    padding-top: 20px;
+}
+
+@media (max-width: 768px) {
+    h2 {
+        font-size: 2.5em;
+    }
+
+    h4 {
+        font-size: 1.25em;
+    }
+
+    .pagination {
+        text-align: center; 
+    }
+}
+
+@media (max-width: 576px) {
+    h2 {
+        font-size: 2em;
+    }
+    
+    h4 {
+        font-size: 1em;
+    }
+    .pagination .page-item .page-link {
+        padding: 5px 10px;
+        margin: 15px 3px;
+        font-size: 12px;
+    }
+}

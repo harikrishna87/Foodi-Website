@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Anuradha Restaurant</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <link href="https://unpkg.com/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+  <link rel="stylesheet" href="./home.css">
+  <link rel="shortcut icon" href="../images/logo1.png" type="image/x-icon">
+</head>
+
+<body>
+  <!-- Navbar -->
+
+  <header>
+    <div class="min-h-full">
+      <nav class="navbar navbar-expand-md">
+        <div class="container px-4">
+
+          <a class="navbar-brand" href="#">
+            <img src="../images/logo.png" alt="Your Company" width="180px">
+          </a>
+
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+            aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0 d-flex justify-content-between align-items-center">
+              <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+              <li class="nav-item"><a class="nav-link" href="./menu.html">Menu</a></li>
+              <li class="nav-item"><a class="nav-link" href="#testimonials">Testimonials</a></li>
+              <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
+            </ul>
+
+            <div class="d-flex align-items-center justify-content-between ml-3">
+              <a href="cart.html" class="btn position-relative p-1 text-gray-400">
+                <i class='bx bxs-cart' style="font-size: 30px; color: #37f70a;"></i>
+                <span class="cart-badge" id="count">0</span>
+              </a>
+              <div class="dropdown ms-3">
+                <button class="btn p-0 border-0 user-avatar" type="button" id="userDropdown" data-bs-toggle="dropdown"
+                  aria-expanded="false">
+                  <img id="userAvatar" src="https://i.pinimg.com/564x/7c/c7/a6/7cc7a630624d20f7797cb4c8e93c09c1.jpg"
+                    alt="User" class="rounded-circle">
+                </button>
+                <ul class="dropdown-menu dropdown-menu-end custom-dropdown" aria-labelledby="userDropdown">
+                  <li><a class="dropdown-item">Name: <span id="loggedusername"></span></a></li>
+                  <li><a class="dropdown-item">Email: <span id="loggeduseremail"></span></a></li>
+                  <li class="dropdown-item">
+                    <label for="imageUpload" style="cursor: pointer; color: #37f70a;">Upload Image</label>
+                    <input type="file" id="imageUpload" name="imageUpload" accept="image/jpeg , image/png, image/jpg"
+                      class="form-control d-none">
+                  </li>
+                  <li><a class="dropdown-item sigout" href="#" id="logout" style="color: red;">Sign out</a></li>
+                </ul>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Navbar Ends -->
+
+  <!-- Hero Section -->
+
+  <section id="home">
+    <div class="container">
+      <div class="row">
+        <div class="col-12 col-sm-12 col-md-12 col-lg-6">
+          <h2 class="title text-center">Welcome To</h2>
+          <h1 class="title1 text-center"> <span class="typing"></span></h1>
+          <h2 class="title2 text-center">Dive into Delights Of <span>Delectable Food</span></h2>
+          </h1>
+          <button class="button">
+            <span class="card1__button">Go To Menu</span>
+          </button>
+        </div>
+
+        <div class="col-12 col-sm-12 col-md-12 col-lg-6">
+          <img src="../images/banner.png" alt="" width="600px">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Hero Section Ends -->
+
+  <!-- Cards Sections -->
+
+  <section id="categories">
+    <div class="container">
+      <h3 class="product">Customer Favourites</h3>
+      <h2 class="title3">Explore Our Delicious <br><span>Items</span></h2>
+      <div class="container">
+        <div class="cards_container">
+          <div class="row" id="cards"></div>
+          <div class="pagination-container">
+            <nav>
+              <ul id="pagination" class="pagination justify-content-center"></ul>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Cards Sections -->
+
+
+  <!-- Testimonials -->
+  <section id="testimonials">
+    <div class="container">
+      <div class="row">
+        <div class="col-12 col-sm-12 col-md-12 col-lg-6 testimonials">
+          <img src="../images/testimonials.png" alt="" width="550px">
+        </div>
+        <div class="col-12 col-sm-12 col-md-12 col-lg-6 ">
+          <div class="testi">
+            <h3>Testimonials</h3>
+            <h2>What Our Customers <br><span> Say About Us</span></h2>
+            <h5><q>I had the pleasure of dining at indu priya restaurant last night, and I'm still raving about the
+                experience! The attention to detail in presentation and service was impeccable</q></h5>
+          </div>
+          <div class="testi1">
+            <div class="d-flex align-items-center pt-4" style="padding-left: 15px;">
+              <div class="position-relative" style="margin-left: -16px;">
+                <img src="../images/testimonial1.png" class="rounded-circle"
+                  style="width: 64px; height: 64px;  border: 4px solid white;" alt="Avatar 1">
+              </div>
+              <div class="position-relative" style="margin-left: -16px;">
+                <img src="../images/testimonial2.png" class="rounded-circle"
+                  style="width: 62px; height: 62px;  border: 4px solid white;" alt="Avatar 2">
+              </div>
+              <div class="position-relative" style="margin-left: -16px;">
+                <img src="../images/testimonial3.png" class="rounded-circle"
+                  style="width: 60px; height: 60px; border: 4px solid white;" alt="Avatar 3">
+              </div>
+              <div class="position-relative" style="margin-left: -16px;">
+                <div class="d-flex justify-content-center align-items-center rounded-circle bg-secondary text-white"
+                  style="width: 48px; height: 48px; border: 4px solid white;">
+                  <span>+99</span>
+                </div>
+              </div>
+            </div>
+            <div class="review pt-4" style="padding-left: 15px;">
+              <h4>Customer Feedback</h4>
+              <h6><i class='bx bxs-star' style="color: yellow;"></i> 4.1 (2.5K Reviews)</h6>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials End -->
+
+  <!-- Services -->
+  <section id="services">
+    <div class="container">
+      <div class="row">
+        <div class="col-12 col-sm12 col-md-12 col-lg-6 services">
+          <h4>Our Story & Services</h4>
+          <h2>Our Culinary Journey <br><span>And Services</span></h2>
+          <h5><q>Rooted in passion, we curate unforgettable dining experiences and offer exceptional services, blending
+              culinary artistry with warm hospitality.</q></h5>
+          <button>Explore Now</button>
+        </div>
+        <div class="col-12 col-sm-12 col-md-12 col-lg-6 services1">
+          <div class="row g-4">
+            <div class="col-6">
+              <div class="card">
+                <img src="../images/icon1.png" width="75" style="margin: 10px auto;" />
+                <h3 class="text-center">Catering</h3>
+                <h5 class="text-center">Delight your guests with our flavors and presentation</h5>
+              </div>
+            </div>
+            <div class="col-6">
+              <div class="card">
+                <img src="../images/icon2.png" width="75" style="margin: 10px auto;" />
+                <h3 class="text-center">Fast delivery</h3>
+                <h5 class="text-center">We deliver your order promptly to your door step</h5>
+              </div>
+            </div>
+            <div class="col-6">
+              <div class="card">
+                <img src="../images/icon3.png" width="75" style="margin: 10px auto;" />
+                <h3 class="text-center">Online Order</h3>
+                <h5 class="text-center">Explore menu & order through Online easily</h5>
+              </div>
+            </div>
+            <div class="col-6">
+              <div class="card">
+                <img src="../images/icon4.png" width="75" style="margin: 10px auto;" />
+                <h3 class="text-center">Gift Cards</h3>
+                <h5 class="text-center">Give the gift of exceptional dining with Gift Cards</h5>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Ends -->
+
+  <footer class="text-center text-lg-start bg-body-secondary text-muted p-2">
+    <div class="container text-center text-md-start mt-5">
+      <div class="row mt-3">
+        <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+          <h6 class="text-uppercase fw-bold mb-3">
+            <img src="../images/logo.png" width="200px" />
+          </h6>
+          <p>
+            Dive into Delights Of Delectable Food
+          </p>
+        </div>
+        <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-3">
+          <h6 class="text-uppercase fw-bold mb-3">
+            Products
+          </h6>
+          <p>
+            <a href="#!" class="text-reset">Veg Delights</a>
+          </p>
+          <p>
+            <a href="#!" class="text-reset">Non-Veg Items</a>
+          </p>
+          <p>
+            <a href="#!" class="text-reset">Desserts</a>
+          </p>
+          <p>
+            <a href="#!" class="text-reset">IceCreams</a>
+          </p>
+        </div>
+        <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-3">
+          <h6 class="text-uppercase fw-bold mb-3">
+            Useful links
+          </h6>
+          <p>
+            <a href="#home" class="text-reset">Home</a>
+          </p>
+          <p>
+            <a href="#categories" class="text-reset">Categories</a>
+          </p>
+          <p>
+            <a href="#testimonials" class="text-reset">Testimonials</a>
+          </p>
+          <p>
+            <a href="#services" class="text-reset">Services</a>
+          </p>
+        </div>
+        <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-3">
+          <h6 class="text-uppercase fw-bold mb-4">Contact</h6>
+          <p><i class="fas fa-home me-2"></i> Nellore, AP 524314, India</p>
+          <p><i class="fas fa-envelope me-2"></i> Anuradha@Restaurant.com</p>
+          <p><i class="fas fa-phone me-2"></i> + 01 234 567 88</p>
+          <p><i class="fas fa-print me-2"></i> + 01 234 567 89</p>
+        </div>
+      </div>
+    </div>
+    <!-- Section: Links  -->
+
+    <!-- Copyright -->
+    <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
+      © 2024 Copyright:
+      <a class="text-reset fw-bold" href="#">Anuradha@Restaurant.com</a>
+    </div>
+    <!-- Copyright -->
+  </footer>
+
+  <!-- <button class="btn" onclick="my_modal_3.showModal()">open modal</button> -->
+ <!-- Modal Structure (Bootstrap) -->
+ <div class="modal fade" id="myModal3" tabindex="-1" aria-labelledby="myModal3Label" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <!-- <h5 class="modal-title mt-2" id="myModal3Label">Hello!</h5> -->
+      <h4>For Every Purchase On Our Website</h4>
+       <img src="../images/logo4.png" alt="" width="150" height="150" class="img_1">
+      <div class="modal-body">
+        <h5>Use Coupon:</h5>
+        <h2><q>15%OFF</q></h2>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"></script>
+  <script src="../Main_Doc/script.js" type="module"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</body>
+
+</html>

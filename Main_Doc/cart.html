@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anuradha Restaurant Cart</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link href="https://unpkg.com/boxicons/css/boxicons.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link rel="stylesheet" href="./cart.css">
+    <link rel="shortcut icon" href="../images/logo1.png" type="image/x-icon">
+</head>
+
+<body>
+
+    <header>
+        <div class="min-h-full">
+            <nav class="navbar navbar-expand-md">
+                <div class="container px-4">
+
+                    <a class="navbar-brand" href="#">
+                        <img src="../images/logo.png" alt="Your Company" width="180px">
+                    </a>
+
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0 d-flex justify-content-between align-items-center">
+                            <li class="nav-item"><a class="nav-link" href="home.html">Home</a></li>
+                            <li class="nav-item"><a class="nav-link" href="menu.html">Menu</a></li>
+                            <li class="nav-item"><a class="nav-link" href="home.html#testimonials">Testimonials</a></li>
+                            <li class="nav-item"><a class="nav-link" href="home.html#services">Services</a></li>
+                            <li class="nav-item orders"><a class="nav-link" href="purchase_history.html">Orders</a></li>
+                        </ul>
+
+                        <div class="d-flex align-items-center justify-content-between ml-3">
+                            <a href="#" class="btn position-relative p-1 text-gray-400">
+                                <i class='bx bxs-cart' style="font-size: 30px; color: #37f70a;"></i>
+                                <span class="cart-badge" id="count">0</span>
+                            </a>
+                            <div class="dropdown ms-3">
+                                <button class="btn p-0 border-0 user-avatar" type="button" id="userDropdown"
+                                    data-bs-toggle="dropdown" aria-expanded="false">
+                                    <img id="userAvatar"
+                                        src="https://i.pinimg.com/564x/7c/c7/a6/7cc7a630624d20f7797cb4c8e93c09c1.jpg"
+                                        alt="User" class="rounded-circle">
+                                </button>
+                                <ul class="dropdown-menu dropdown-menu-end custom-dropdown"
+                                    aria-labelledby="userDropdown">
+                                    <li><a class="dropdown-item">Name: <span id="loggedusername"></span></a></li>
+                                    <li><a class="dropdown-item">Email: <span id="loggeduseremail"></span></a></li>
+                                    <li class="dropdown-item">
+                                        <label for="imageUpload" style="cursor: pointer; color: #37f70a;">Upload
+                                            Image</label>
+                                        <input type="file" id="imageUpload" name="imageUpload"
+                                            accept="image/jpeg , image/png, image/jpg" class="form-control d-none">
+                                    </li>
+                                    <li><a class="dropdown-item sigout" href="#" id="logout" style="color: red;">Sign
+                                            out</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        </div>
+        </nav>
+        <!-- </div> -->
+    </header>
+
+    <div class="content">
+        <div class="container">
+            <h2>Items Added To <span>The Cart</span></h2>
+        </div>
+    </div>
+
+    <div class="container">
+        <table id="cartTable" class="table table-striped">
+            <thead>
+                <tr>
+                    <!-- <th>S NO</th> -->
+                    <th>Product</th>
+                    <th>Product Name</th>
+                    <th>Price</th>
+                    <th>Quantity</th>
+                    <th>Total</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody id="cartItemsBody">
+                <!-- Cart items will be inserted here dynamically -->
+            </tbody>
+        </table>
+    </div>
+
+    <div class="container">
+        <button class="add_more">Add Items</button>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-12 col-md-6 details">
+                <h3>Customer Details</h3>
+                <h4>Name: <span id="username"></span></h4>
+                <h4>Email: <span id="email"></span></h4>
+                <h4>User Id: <span id="userid"></span></h4>
+            </div>
+
+            <div class="col-12 col-md-6 details1">
+                <h3>Order Details</h3>
+                <h5>Totals Price: <span id="Price"></span></h5>
+                <button id="btn">Proceed to CheckOut</button>
+            </div>
+        </div>
+    </div>
+
+    <footer class="text-center text-lg-start bg-body-secondary text-muted p-2">
+        <div class="container text-center text-md-start mt-5">
+            <div class="row mt-3">
+                <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+                    <h6 class="text-uppercase fw-bold mb-3">
+                        <img src="../images/logo.png" width="200px" />
+                    </h6>
+                    <p>
+                        Dive into Delights Of Delectable Food
+                    </p>
+                </div>
+                <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-3">
+                    <h6 class="text-uppercase fw-bold mb-3">
+                        Products
+                    </h6>
+                    <p>
+                        <a href="#!" class="text-reset">Veg Delights</a>
+                    </p>
+                    <p>
+                        <a href="#!" class="text-reset">Non-Veg Items</a>
+                    </p>
+                    <p>
+                        <a href="#!" class="text-reset">Desserts</a>
+                    </p>
+                    <p>
+                        <a href="#!" class="text-reset">IceCreams</a>
+                    </p>
+                </div>
+                <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-3">
+                    <h6 class="text-uppercase fw-bold mb-3">
+                        Useful links
+                    </h6>
+                    <p>
+                        <a href="home.html#home" class="text-reset">Home</a>
+                    </p>
+                    <p>
+                        <a href="home.html#categories" class="text-reset">Categories</a>
+                    </p>
+                    <p>
+                        <a href="home.html#testimonials" class="text-reset">Testimonials</a>
+                    </p>
+                    <p>
+                        <a href="home.html#services" class="text-reset">Services</a>
+                    </p>
+                </div>
+                <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-3">
+                    <h6 class="text-uppercase fw-bold mb-4">Contact</h6>
+                    <p><i class="fas fa-home me-2"></i> Nellore, AP 524314, India</p>
+                    <p><i class="fas fa-envelope me-2"></i> Anuradha@Restaurant.com</p>
+                    <p><i class="fas fa-phone me-2"></i> + 01 234 567 88</p>
+                    <p><i class="fas fa-print me-2"></i> + 01 234 567 89</p>
+                </div>
+            </div>
+        </div>
+        <!-- Section: Links  -->
+
+        <!-- Copyright -->
+        <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
+            © 2024 Copyright:
+            <a class="text-reset fw-bold" href="#">Anuradha@Restaurant.com</a>
+        </div>
+        <!-- Copyright -->
+    </footer>
+
+    <!-- Payment Modal -->
+    <div class="modal fade" id="paymentModal" tabindex="-1" aria-labelledby="paymentModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <!-- <div class="modal-header">
+                    <h5 class="modal-title text-center" id="paymentModalLabel">Payment Details</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div> -->
+                <!-- <h4>Payment Details</h4> -->
+                <h4 id="payment-details">Payment Details</h4>
+                <div class="modal-body">
+                    <form id="paymentForm">
+                        <div class="mb-3">
+                            <label for="cardNumber" class="label">Card Number</label>
+                            <input type="text" class="form-control" id="cardNumber" placeholder="Enter your card number"
+                                required />
+                            <div id="error-message">Please enter a 16-digit card number.</div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="cardHolder" class="label">Card Holder Name</label>
+                            <input type="text" class="form-control" id="cardHolder" placeholder="Enter card holder name"
+                                required />
+                        </div>
+                        <div class="mb-3">
+                            <label for="expiryDate" class="label">Expiry Date</label>
+                            <input type="text" class="form-control" id="expiryDate" placeholder="MM/YY" required />
+                        </div>
+                        <div class="mb-3">
+                            <label for="cvv" class="label">CVV</label>
+                            <input type="password" class="form-control" id="cvv" placeholder="CVV" required />
+                        </div>
+                        <div class="mb-3">
+                            <label for="cvv" class="label">Coupon</label> <br>
+                            <input type="text" id="couponCode" class="form-control1" placeholder="Enter coupon code" />
+                            <button id="applyCouponButton">Apply Coupon</button>
+                            <div id="couponMessage"></div>
+                        </div>
+                        
+                        
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <h5 class="footer-title"></h5>
+                    <div class="footer-buttons">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                        <button type="button" class="btn btn-success" id="confirmPayment">Pay Now</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+    <script src="../Main_Doc/cart.js" type="module"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</body>
+
+</html>

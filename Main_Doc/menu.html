@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anuradha Restaurant Menu</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link href="https://unpkg.com/boxicons/css/boxicons.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link rel="stylesheet" href="../Main_Doc/menu.css">
+    <link rel="shortcut icon" href="../images/logo1.png" type="image/x-icon">
+</head>
+
+<body>
+
+    <header>
+        <div class="min-h-full">
+            <nav class="navbar navbar-expand-md">
+                <div class="container px-4">
+
+                    <a class="navbar-brand" href="#">
+                        <img src="../images/logo.png" alt="Your Company" width="180px">
+                    </a>
+
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0 d-flex justify-content-between align-items-center">
+                            <li class="nav-item"><a class="nav-link" href="home.html#home">Home</a></li>
+                            <li class="nav-item"><a class="nav-link" href="home.html#categories">Categories</a></li>
+                            <li class="nav-item"><a class="nav-link" href="home.html#testimonials">Testimonials</a></li>
+                            <li class="nav-item"><a class="nav-link" href="home.html#services">Services</a></li>
+                        </ul>
+                    
+                        <div class="d-flex align-items-center justify-content-between ml-3">
+                            <a href="../Main_Doc/cart.html" class="btn position-relative p-1 text-gray-400">
+                                <i class='bx bxs-cart' style="font-size: 30px; color: #37f70a;"></i>
+                                <span class="cart-badge" id="count">0</span>
+                            </a>
+                            <div class="dropdown ms-3">
+                                <button class="btn p-0 border-0 user-avatar" type="button" id="userDropdown"
+                                    data-bs-toggle="dropdown" aria-expanded="false">
+                                    <img id="userAvatar"
+                                        src="https://i.pinimg.com/564x/7c/c7/a6/7cc7a630624d20f7797cb4c8e93c09c1.jpg"
+                                        alt="User" class="rounded-circle">
+                                </button>
+                                <ul class="dropdown-menu dropdown-menu-end custom-dropdown"
+                                    aria-labelledby="userDropdown">
+                                    <li><a class="dropdown-item">Name: <span id="loggedusername"></span></a></li>
+                                    <li><a class="dropdown-item">Email: <span id="loggeduseremail"></span></a></li>
+                                    <li class="dropdown-item">
+                                        <label for="imageUpload" style="cursor: pointer; color: #37f70a;">Upload
+                                            Image</label>
+                                        <input type="file" id="imageUpload" name="imageUpload"
+                                            accept="image/jpeg , image/png, image/jpg" class="form-control d-none">
+                                    </li>
+                                    <li><a class="dropdown-item sigout" href="#" id="logout" style="color: red;">Sign
+                                            out</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+            </nav>
+        <!-- </div> -->
+    </header>
+
+    <div class="container text-center py-5">
+        <div class="row justify-content-center">
+            <div class="col-lg-8 col-md-10 col-sm-12 content">
+                <h2>For the Love of <span>Delicious Food</span></h2>
+                <h4>
+                    <q>
+                        Come with family & feel the joy of mouthwatering food such as BreakFast, Veg & Non-Veg Foods,
+                        IceCreams, Deserts, Drinks, and more for a moderate cost...
+                    </q>
+                </h4>
+            </div>
+        </div>
+    </div>
+    
+    <div class="container searchfun">
+        <div class="filter">
+            <button>All</button>
+            <button>Veg</button>
+            <button>NonVeg</button>
+            <button>Desserts</button>
+            <button>IceCream</button>
+            <button>Fruit Juice</button>
+            <button>Pizzas</button>
+        </div>
+        <div class="search">
+            <input type="search" id="search" placeholder="Search for food">
+        </div>
+    </div>
+    
+    <div class="container">
+        <div class="cards_container">
+        <div class="row" id="cards"></div>
+        <div class="pagination-container">
+            <nav>
+                <ul id="pagination" class="pagination justify-content-center"></ul>
+            </nav>
+        </div>
+    </div>
+    </div>
+    
+
+    <footer class="text-center text-lg-start bg-body-secondary text-muted p-2">
+        <div class="container text-center text-md-start mt-5">
+            <div class="row mt-3">
+                <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+                    <h6 class="text-uppercase fw-bold mb-3">
+                        <img src="../images/logo.png" width="200px" />
+                    </h6>
+                    <p>
+                        Dive into Delights Of Delectable Food
+                    </p>
+                </div>
+                <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-3">
+                    <h6 class="text-uppercase fw-bold mb-3">
+                        Products
+                    </h6>
+                    <p>
+                        <a href="#!" class="text-reset">Veg Delights</a>
+                    </p>
+                    <p>
+                        <a href="#!" class="text-reset">Non-Veg Items</a>
+                    </p>
+                    <p>
+                        <a href="#!" class="text-reset">Desserts</a>
+                    </p>
+                    <p>
+                        <a href="#!" class="text-reset">IceCreams</a>
+                    </p>
+                </div>
+                <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-3">
+                    <h6 class="text-uppercase fw-bold mb-3">
+                        Useful links
+                    </h6>
+                    <p>
+                        <a href="home.html#home" class="text-reset">Home</a>
+                    </p>
+                    <p>
+                        <a href="home.html#categories" class="text-reset">Categories</a>
+                    </p>
+                    <p>
+                        <a href="home.html#testimonials" class="text-reset">Testimonials</a>
+                    </p>
+                    <p>
+                        <a href="home.html#services" class="text-reset">Services</a>
+                    </p>
+                </div>
+                <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-3">
+                    <h6 class="text-uppercase fw-bold mb-4">Contact</h6>
+                    <p><i class="fas fa-home me-2"></i> Nellore, AP 524314, India</p>
+                    <p><i class="fas fa-envelope me-2"></i> Anuradha@Restaurant.com</p>
+                    <p><i class="fas fa-phone me-2"></i> + 01 234 567 88</p>
+                    <p><i class="fas fa-print me-2"></i> + 01 234 567 89</p>
+                </div>
+            </div>
+        </div>
+        <!-- Section: Links  -->
+
+        <!-- Copyright -->
+        <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
+            © 2024 Copyright:
+            <a class="text-reset fw-bold" href="#">Anuradha@Restaurant.com</a>
+        </div>
+        <!-- Copyright -->
+    </footer>
+
+
+      
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+    <script src="../Main_Doc/menu.js" type="module"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</body>
+
+</html>

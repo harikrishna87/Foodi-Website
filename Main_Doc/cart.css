@@ -1,0 +1,445 @@
+@import url('https://fonts.googleapis.com/css2?family=Alex+Brush&family=Clicker+Script&family=Playwrite+HR:wght@100..400&display=swap');
+
+body {
+    font-family: 'Times New Roman', Times, serif;
+}
+
+body,
+html {
+    overflow-x: hidden;
+}
+
+section {
+    min-height: 90vh;
+    padding-top: 150px;
+    padding-bottom: 30px;
+}
+  
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    width: 100%;
+    background-color: #f0f0f0;
+    box-shadow: 1px 1px 10px 4px rgb(174, 174, 174);
+}
+
+.navbar {
+    background-color: white;
+}
+
+.navbar-nav {
+    margin: 0 auto;
+}
+
+.navbar-nav .nav-link {
+    color: rgb(54, 241, 54);
+    font-size: 25px;
+}
+
+.navbar-nav .nav-link:hover {
+    color: rgb(183, 180, 180);
+}
+
+.cart-badge {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: #ef4444;
+    color: #fff;
+    font-size: 0.75rem;
+    width: 17px;
+    height: 17px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.dropdown-menu {
+    width: 18rem;
+}
+
+.ms-3 {
+    margin: 20px;
+}
+
+/* User Icon styling */
+.user-avatar img {
+    width: 2.5em;
+    height: 2.5em;
+}
+
+.nav-item a {
+    margin: 2px;
+    font-size: 20px;
+}
+
+.dropdown-item:active {
+    color: white;
+    background-color: rgb(54, 241, 54);
+    border-radius: 5px;
+}
+
+#logout:active,
+label.form-label:active {
+    color: white;
+    background-color: rgb(54, 241, 54);
+    border-radius: 5px;
+}
+
+.text-reset {
+    text-decoration: none;
+}
+
+.content {
+    padding-top: 150px;
+}
+
+.content h2 {
+    font-size: 2.75em;
+    font-weight: 600;
+    text-align: center;
+    padding-bottom: 30px;
+}
+
+.content h2 span {
+    color: rgb(54, 241, 54);
+}
+
+.table th {
+    background-color: rgb(54, 241, 54);
+    color: white;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.details, .details1 {
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+.details h3, .details1 h3 {
+    font-size: 23px;
+    font-weight: 600;
+}
+
+.details h4, .details1 h5 {
+    font-size: 18px;
+    font-weight: 300;
+}
+
+.details1 button {
+    font-size: 20px;
+    font-weight: 500;
+    color: white;
+    background-color: rgb(54, 241, 54);
+    padding: 8px 16px;
+    border: none;
+    border-radius: 12px;
+    margin: 10px 0px;
+    transition: transform 2s;
+}
+
+.details1 button:hover {
+    background-color: rgb(183, 180, 180);
+}
+
+.details1 button:active {
+    transform: scale(0.8);
+}
+
+.cart1 {
+    font-size: 25px;
+    font-weight: 500;
+}
+
+.increment {
+    font-size: 17px;
+    font-weight: 500;
+    border: none;
+    background-color:rgb(54, 241, 54);
+    color: white;
+    transition: transform 2s;
+}
+
+.increment:hover, .decrement:hover {
+    background-color: rgb(183, 180, 180);
+}
+
+.decrement:active, .increment:active {
+    transform: scale(0.8);
+}
+ .decrement {
+    font-size: 17px;
+    font-weight: 500;
+    border: none;
+    background-color:rgb(54, 241, 54);
+    color: white;
+    transition: transform 2s;
+}
+
+.remove-item {
+    border: none;
+    background-color: transparent;
+    font-size: 18px;
+}
+
+.image{
+    border-radius: 12px;
+    width: 50px;
+    height: 50px;
+}
+
+/* General table styles */
+.table {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    margin: 0 auto;
+    width: 100%;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table th,
+table td {
+    text-align: center;
+    padding: 8px;
+    word-wrap: break-word;
+}
+
+table th {
+    background-color: #f4f4f4;
+    font-weight: bold;
+}
+
+.add_more {
+    font-size: 18px;
+    padding: 8px 16px;
+    color: white;
+    background-color: rgb(54, 241, 54);
+    margin-top: 15px;
+    border: none;
+    font-weight: 500;
+    border-radius: 12px;
+    transition: transform 2s;
+}
+
+.add_more:hover {
+    background-color: rgb(183, 180, 180);
+}
+
+.add_more:active {
+    transform: scale(0.8);
+}
+
+.modal-header {
+    background-color: rgb(54, 241, 54);
+    color: white;
+    text-align: center;
+}
+
+.modal-body .form-label {
+    color: rgba(78, 78, 78, 0.655);
+    font-weight: bold;
+}
+
+.modal-body .form-control {
+    border: 2px solid rgb(183, 180, 180);
+    background-color: white;
+    color: black;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.modal-body .form-control1 {
+    width: 75%;
+    border: 2px solid rgb(183, 180, 180);
+    padding: 6px;
+    border-radius: 8px;
+    background-color: white;
+    color: black;
+    transition: border-color 0.3s, box-shadow 0.3s;
+} 
+
+#applyCouponButton {
+    background-color: rgb(54, 241, 54);
+    color: white;
+    padding: 5px;
+    border-radius: 8px;
+    transition: transform 2s;
+    border: none;
+}
+
+#applyCouponButton:hover {
+    background-color: rgb(183, 180, 180);
+}
+
+#applyCouponButton:active {
+    transform: scale(0.9);
+}
+.modal-body .form-control:focus, .modal-body .form-control1:focus {
+    border-color: orange;
+    box-shadow: 0 0 5px orange;
+    outline: none;
+}
+
+.modal-footer .btn-secondary {
+    background-color:rgb(183, 180, 180);
+    color: white;
+    border: 1px solid white;
+}
+
+.modal-footer .btn-secondary:hover {
+    background-color: white;
+    color: black; 
+    border: 1px solid ;
+}
+
+.modal-footer .btn-success {
+    background-color: rgb(54, 241, 54);
+    color: white;
+    border: 1px solid white;
+}
+
+.modal-footer .btn-success:hover {
+    background-color: white;
+    color: black;
+    border: 1px solid rgb(54, 241, 54);
+}
+
+.modal-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+}
+#payment-details span {
+    display: inline-block;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeUp 0.5s ease forwards;
+  }
+  
+  .label {
+    font-size: 17px;
+    padding-top: 3px;
+    color: rgb(183, 180, 180);
+  }
+  @keyframes fadeUp {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+.modal-content h4 {
+    text-align: center;
+    padding-top: 20px;
+    font-size: 30px;
+    color: rgb(54, 241, 54);
+}
+
+.modal-content {
+    border-radius: 20px !important;
+}
+.footer-title {
+    margin: 0;
+    font-weight: bold;
+    color : rgb(54, 241, 54);
+}
+.amt {
+    color: black;
+}
+.footer-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+#couponMessage {
+    padding-top: 10px;
+}
+
+
+/* Responsive adjustments for small screens */
+@media (max-width: 426px) {
+
+    .content {
+        padding-top: 160px;
+    }
+
+    .content h2 {
+        font-size: 2.25em;
+        font-weight: 600;
+        text-align: center;
+        padding-bottom: 30px;
+    }
+
+    .details, .details1 {
+        padding-top: 15px;
+        padding-bottom: 15px;
+    }
+
+    .table th,
+    .table td {
+        font-size: 12px;
+        padding: 6px; 
+    }
+
+    .table {
+        padding: 8px; 
+    }
+
+    .image {
+        width: 35px;
+        height: 35px;
+        border-radius: 8px;
+    }
+
+    .remove-item {
+        font-size: 15px;
+        padding: 4px 6px;
+    }
+
+    .details h3, .details1 h3 {
+        font-size: 18px;
+        font-weight: 600;
+    }
+    
+    .details h4, .details1 h5 {
+        font-size: 15px;
+        font-weight: 300;
+    }
+    
+    .details1 button {
+        font-size: 14px;
+        font-weight: 500;
+        color: white;
+        background-color: rgb(54, 241, 54);
+        padding: 8px 16px;
+        border: none;
+        border-radius: 12px;
+        margin: 10px 0px;
+        transition: transform 2s;
+    }
+
+    .add_more {
+        font-size: 14px;
+        padding: 8px 16px;
+        color: white;
+        background-color: rgb(54, 241, 54);
+        margin-top: 15px;
+        border: none;
+        border-radius: 12px;
+        transition: transform 2s;
+    }
+}
+
+#error-message {
+    color: red;
+    font-size: 14px;
+    display: none;
+  }
