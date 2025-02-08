@@ -79,11 +79,10 @@
         </div>
     </div>
 
-    <div class="container">
+    <div class="container mt-4">
         <table id="cartTable" class="table table-striped">
             <thead>
                 <tr>
-                    <!-- <th>S NO</th> -->
                     <th>Product</th>
                     <th>Product Name</th>
                     <th>Price</th>
@@ -93,13 +92,45 @@
                 </tr>
             </thead>
             <tbody id="cartItemsBody">
-                <!-- Cart items will be inserted here dynamically -->
+                <!-- Skeleton rows before data loads -->
+                <tr class="skeleton-row">
+                    <td><div class="skeleton skeleton-img"></div></td>
+                    <td><div class="skeleton skeleton-text"></div></td>
+                    <td><div class="skeleton skeleton-text"></div></td>
+                    <td><div class="skeleton skeleton-text"></div></td>
+                    <td><div class="skeleton skeleton-text"></div></td>
+                    <td><div class="skeleton skeleton-icon"></div></td>
+                </tr>
+                <tr class="skeleton-row">
+                    <td><div class="skeleton skeleton-img"></div></td>
+                    <td><div class="skeleton skeleton-text"></div></td>
+                    <td><div class="skeleton skeleton-text"></div></td>
+                    <td><div class="skeleton skeleton-text"></div></td>
+                    <td><div class="skeleton skeleton-text"></div></td>
+                    <td><div class="skeleton skeleton-icon"></div></td>
+                </tr>
+                <tr class="skeleton-row">
+                    <td><div class="skeleton skeleton-img"></div></td>
+                    <td><div class="skeleton skeleton-text"></div></td>
+                    <td><div class="skeleton skeleton-text"></div></td>
+                    <td><div class="skeleton skeleton-text"></div></td>
+                    <td><div class="skeleton skeleton-text"></div></td>
+                    <td><div class="skeleton skeleton-icon"></div></td>
+                </tr>
+                <tr class="skeleton-row">
+                    <td><div class="skeleton skeleton-img"></div></td>
+                    <td><div class="skeleton skeleton-text"></div></td>
+                    <td><div class="skeleton skeleton-text"></div></td>
+                    <td><div class="skeleton skeleton-text"></div></td>
+                    <td><div class="skeleton skeleton-text"></div></td>
+                    <td><div class="skeleton skeleton-icon"></div></td>
+                </tr>
             </tbody>
         </table>
     </div>
 
     <div class="container">
-        <button class="add_more">Add Items</button>
+        <button class="btn btn-primary add_more">Add Items</button>
     </div>
 
     <div class="container">
@@ -241,6 +272,13 @@
         crossorigin="anonymous"></script>
     <script src="../Main_Doc/cart.js" type="module"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <script>
+        setTimeout(() => {
+            const cartItemsBody = document.getElementById("cartItemsBody");
+        }, 3000);
+    </script>
+
 </body>
 
 </html>

@@ -243,13 +243,26 @@ label.form-label:active {
 }
 
 .not_available {
-    font-size: 30px;
-    color: rgb(54, 241, 54);
-    font-weight: 500;
     text-align: center;
+}
+.not_available img{
+    width: 100px;
+    height: 100px;
+}
+
+.not_available h1{
+    font-size: 30px;
+    color: rgb(183, 180, 180);
+    font-weight: 500;
     padding-top: 20px;
 }
 
+.not_available p {
+    font-size: 20px;
+    color: rgb(226, 226, 226);
+    font-weight: 400;
+    padding-top: 10px
+}
 @media (max-width: 768px) {
     h2 {
         font-size: 2.5em;
@@ -277,4 +290,75 @@ label.form-label:active {
         margin: 15px 3px;
         font-size: 12px;
     }
+}
+
+
+/* Skeleton Card */
+.skeleton-card {
+    width: 100%;
+    background: #f0f0f0;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Image Placeholder */
+.skeleton-img {
+    width: 100%;
+    height: 180px;
+    background: linear-gradient(90deg, #e0e0e0 25%, #f0f0f0 50%, #e0e0e0 75%);
+    background-size: 200% 100%;
+    animation: loading 1.5s infinite linear;
+    border-radius: 8px;
+}
+
+/* Title and Rating Row */
+.skeleton-row {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 5px;
+}
+
+/* Common Skeleton Text */
+.skeleton-text {
+    height: 15px;
+    background: linear-gradient(90deg, #e0e0e0 25%, #f0f0f0 50%, #e0e0e0 75%);
+    background-size: 200% 100%;
+    animation: loading 1.5s infinite linear;
+    border-radius: 4px;
+}
+
+/* Title */
+.skeleton-title {
+    width: 60%;
+    height: 20px;
+}
+
+/* Rating */
+.skeleton-rating {
+    width: 30%;
+    height: 15px;
+}
+
+/* Price */
+.skeleton-price {
+    width: 40%;
+}
+
+/* Button */
+.skeleton-btn {
+    width: 50%;
+    height: 35px;
+    background: #ddd;
+    border-radius: 5px;
+    animation: loading 1.5s infinite linear;
+}
+
+/* Skeleton Loading Animation */
+@keyframes loading {
+    0% { background-position: -200% 0; }
+    100% { background-position: 200% 0; }
 }

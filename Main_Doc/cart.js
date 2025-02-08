@@ -548,13 +548,17 @@ document.getElementById("btn").addEventListener("click", async () => {
 
             let itemsMessage = "";
             cartItems.forEach(item => {
-                itemsMessage += `*${item.title}* - ₹${item.price} x ${item.quantity} = ₹${item.price * item.quantity}\n`;
+                itemsMessage += `Product Details: \n *${item.title}* - ₹${item.price} x ${item.quantity} = ₹${item.price * item.quantity}\n`;
             });
 
             const totalMessage = `Total Amount: ₹${totalAmount.toFixed(2)}\nPayment Method: Card`;
 
+            const UserId = `UserId: ${userId}`
+
+            const UserName = `UserName: ${cardHolder}`
+
             const phoneNumber = "9550172687";
-            const message = encodeURIComponent(`${itemsMessage}\n${totalMessage}`);
+            const message = encodeURIComponent(`${UserName} \n ${UserId} \n ${itemsMessage}\n${totalMessage}`);
             const whatsappLink = `https://wa.me/${phoneNumber}?text=${message}`;
 
             window.open(whatsappLink, '_blank');

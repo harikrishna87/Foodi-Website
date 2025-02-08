@@ -160,6 +160,26 @@
             font-size: 12px;
         }
         }
+
+        .skeleton {
+            background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+            background-size: 200% 100%;
+            animation: shimmer 1.5s infinite linear;
+            border-radius: 4px;
+            height: 16px;
+            display: block;
+            margin: 5px auto;
+        }
+
+        @keyframes shimmer {
+            0% { background-position: -200% 0; }
+            100% { background-position: 200% 0; }
+        }
+
+        .skeleton-row td {
+            padding: 10px;
+            margin: auto;
+        }
     </style>
 </head>
 
@@ -170,7 +190,7 @@
         </div>
     </div>
 
-    <div class="container">
+    <!-- <div class="container">
         <table id="cartTable" class="table table-striped">
             <thead>
                 <tr>
@@ -187,8 +207,89 @@
 
             </tbody>
         </table>
-    </div>
+    </div> -->
 
+    <div class="container">
+        <table id="cartTable" class="table table-striped">
+            <thead>
+                <tr>
+                    <th>S.No</th>
+                    <th>Date of Purchase</th>
+                    <th>Items</th>
+                    <th>Purchase Amount</th>
+                    <th>Payment Method</th>
+                    <th>Order Status</th>
+                    <th>Delivery Status</th>
+                </tr>
+            </thead>
+            <tbody id="purchaseHistoryBody">
+                <!-- Skeleton Rows -->
+                <tr class="skeleton-row">
+                    <td><span class="skeleton" style="width: 30px;"></span></td>
+                    <td><span class="skeleton" style="width: 120px;"></span></td>
+                    <td><span class="skeleton" style="width: 100px;"></span></td>
+                    <td><span class="skeleton" style="width: 80px;"></span></td>
+                    <td><span class="skeleton" style="width: 100px;"></span></td>
+                    <td><span class="skeleton" style="width: 90px;"></span></td>
+                    <td><span class="skeleton" style="width: 90px;"></span></td>
+                </tr>
+                <tr class="skeleton-row">
+                    <td><span class="skeleton" style="width: 30px;"></span></td>
+                    <td><span class="skeleton" style="width: 120px;"></span></td>
+                    <td><span class="skeleton" style="width: 100px;"></span></td>
+                    <td><span class="skeleton" style="width: 80px;"></span></td>
+                    <td><span class="skeleton" style="width: 100px;"></span></td>
+                    <td><span class="skeleton" style="width: 90px;"></span></td>
+                    <td><span class="skeleton" style="width: 90px;"></span></td>
+                </tr>
+                <tr class="skeleton-row">
+                    <td><span class="skeleton" style="width: 30px;"></span></td>
+                    <td><span class="skeleton" style="width: 120px;"></span></td>
+                    <td><span class="skeleton" style="width: 100px;"></span></td>
+                    <td><span class="skeleton" style="width: 80px;"></span></td>
+                    <td><span class="skeleton" style="width: 100px;"></span></td>
+                    <td><span class="skeleton" style="width: 90px;"></span></td>
+                    <td><span class="skeleton" style="width: 90px;"></span></td>
+                </tr>
+                <tr class="skeleton-row">
+                    <td><span class="skeleton" style="width: 30px;"></span></td>
+                    <td><span class="skeleton" style="width: 120px;"></span></td>
+                    <td><span class="skeleton" style="width: 100px;"></span></td>
+                    <td><span class="skeleton" style="width: 80px;"></span></td>
+                    <td><span class="skeleton" style="width: 100px;"></span></td>
+                    <td><span class="skeleton" style="width: 90px;"></span></td>
+                    <td><span class="skeleton" style="width: 90px;"></span></td>
+                </tr>
+                <tr class="skeleton-row">
+                    <td><span class="skeleton" style="width: 30px;"></span></td>
+                    <td><span class="skeleton" style="width: 120px;"></span></td>
+                    <td><span class="skeleton" style="width: 100px;"></span></td>
+                    <td><span class="skeleton" style="width: 80px;"></span></td>
+                    <td><span class="skeleton" style="width: 100px;"></span></td>
+                    <td><span class="skeleton" style="width: 90px;"></span></td>
+                    <td><span class="skeleton" style="width: 90px;"></span></td>
+                </tr>
+                <tr class="skeleton-row">
+                    <td><span class="skeleton" style="width: 30px;"></span></td>
+                    <td><span class="skeleton" style="width: 120px;"></span></td>
+                    <td><span class="skeleton" style="width: 100px;"></span></td>
+                    <td><span class="skeleton" style="width: 80px;"></span></td>
+                    <td><span class="skeleton" style="width: 100px;"></span></td>
+                    <td><span class="skeleton" style="width: 90px;"></span></td>
+                    <td><span class="skeleton" style="width: 90px;"></span></td>
+                </tr>
+                <tr class="skeleton-row">
+                    <td><span class="skeleton" style="width: 30px;"></span></td>
+                    <td><span class="skeleton" style="width: 120px;"></span></td>
+                    <td><span class="skeleton" style="width: 100px;"></span></td>
+                    <td><span class="skeleton" style="width: 80px;"></span></td>
+                    <td><span class="skeleton" style="width: 100px;"></span></td>
+                    <td><span class="skeleton" style="width: 90px;"></span></td>
+                    <td><span class="skeleton" style="width: 90px;"></span></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
     <div class="container">
         <button class="back_btn"><i class='bx bx-arrow-back'></i> Back To Cart</button>
     </div>
@@ -197,6 +298,11 @@
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
     <script src="ph.js" type="module"></script>
+    <script>
+                setTimeout(() => {
+            document.getElementById("purchaseHistoryBody")
+        }, 3000);
+    </script>
 </body>
 
 </html>

@@ -14,7 +14,7 @@ section {
     padding-top: 150px;
     padding-bottom: 30px;
 }
-  
+
 header {
     position: fixed;
     top: 0;
@@ -115,17 +115,20 @@ label.form-label:active {
     font-weight: 600;
 }
 
-.details, .details1 {
+.details,
+.details1 {
     padding-top: 30px;
     padding-bottom: 30px;
 }
 
-.details h3, .details1 h3 {
+.details h3,
+.details1 h3 {
     font-size: 23px;
     font-weight: 600;
 }
 
-.details h4, .details1 h5 {
+.details h4,
+.details1 h5 {
     font-size: 18px;
     font-weight: 300;
 }
@@ -159,23 +162,26 @@ label.form-label:active {
     font-size: 17px;
     font-weight: 500;
     border: none;
-    background-color:rgb(54, 241, 54);
+    background-color: rgb(54, 241, 54);
     color: white;
     transition: transform 2s;
 }
 
-.increment:hover, .decrement:hover {
+.increment:hover,
+.decrement:hover {
     background-color: rgb(183, 180, 180);
 }
 
-.decrement:active, .increment:active {
+.decrement:active,
+.increment:active {
     transform: scale(0.8);
 }
- .decrement {
+
+.decrement {
     font-size: 17px;
     font-weight: 500;
     border: none;
-    background-color:rgb(54, 241, 54);
+    background-color: rgb(54, 241, 54);
     color: white;
     transition: transform 2s;
 }
@@ -186,7 +192,7 @@ label.form-label:active {
     font-size: 18px;
 }
 
-.image{
+.image {
     border-radius: 12px;
     width: 50px;
     height: 50px;
@@ -263,7 +269,7 @@ table th {
     background-color: white;
     color: black;
     transition: border-color 0.3s, box-shadow 0.3s;
-} 
+}
 
 #applyCouponButton {
     background-color: rgb(54, 241, 54);
@@ -281,22 +287,24 @@ table th {
 #applyCouponButton:active {
     transform: scale(0.9);
 }
-.modal-body .form-control:focus, .modal-body .form-control1:focus {
+
+.modal-body .form-control:focus,
+.modal-body .form-control1:focus {
     border-color: orange;
     box-shadow: 0 0 5px orange;
     outline: none;
 }
 
 .modal-footer .btn-secondary {
-    background-color:rgb(183, 180, 180);
+    background-color: rgb(183, 180, 180);
     color: white;
     border: 1px solid white;
 }
 
 .modal-footer .btn-secondary:hover {
     background-color: white;
-    color: black; 
-    border: 1px solid ;
+    color: black;
+    border: 1px solid;
 }
 
 .modal-footer .btn-success {
@@ -317,25 +325,27 @@ table th {
     align-items: center;
     padding: 15px;
 }
+
 #payment-details span {
     display: inline-block;
     opacity: 0;
     transform: translateY(20px);
     animation: fadeUp 0.5s ease forwards;
-  }
-  
-  .label {
+}
+
+.label {
     font-size: 17px;
     padding-top: 3px;
     color: rgb(183, 180, 180);
-  }
-  @keyframes fadeUp {
+}
+
+@keyframes fadeUp {
     to {
-      opacity: 1;
-      transform: translateY(0);
+        opacity: 1;
+        transform: translateY(0);
     }
-  }
-  
+}
+
 .modal-content h4 {
     text-align: center;
     padding-top: 20px;
@@ -346,14 +356,17 @@ table th {
 .modal-content {
     border-radius: 20px !important;
 }
+
 .footer-title {
     margin: 0;
     font-weight: bold;
-    color : rgb(54, 241, 54);
+    color: rgb(54, 241, 54);
 }
+
 .amt {
     color: black;
 }
+
 .footer-buttons {
     display: flex;
     gap: 10px;
@@ -378,7 +391,8 @@ table th {
         padding-bottom: 30px;
     }
 
-    .details, .details1 {
+    .details,
+    .details1 {
         padding-top: 15px;
         padding-bottom: 15px;
     }
@@ -386,11 +400,11 @@ table th {
     .table th,
     .table td {
         font-size: 12px;
-        padding: 6px; 
+        padding: 6px;
     }
 
     .table {
-        padding: 8px; 
+        padding: 8px;
     }
 
     .image {
@@ -404,16 +418,18 @@ table th {
         padding: 4px 6px;
     }
 
-    .details h3, .details1 h3 {
+    .details h3,
+    .details1 h3 {
         font-size: 18px;
         font-weight: 600;
     }
-    
-    .details h4, .details1 h5 {
+
+    .details h4,
+    .details1 h5 {
         font-size: 15px;
         font-weight: 300;
     }
-    
+
     .details1 button {
         font-size: 14px;
         font-weight: 500;
@@ -442,4 +458,47 @@ table th {
     color: red;
     font-size: 14px;
     display: none;
-  }
+}
+
+/* Skeleton Loader */
+.skeleton {
+    background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+    background-size: 200% 100%;
+    animation: shimmer 1.5s infinite linear;
+    border-radius: 4px;
+}
+
+@keyframes shimmer {
+    0% {
+        background-position: -200% 0;
+    }
+
+    100% {
+        background-position: 200% 0;
+    }
+}
+
+.skeleton-row td {
+    height: 40px;
+    width: 100px;
+    text-align: center;
+}
+
+.skeleton-img {
+    width: 50px;
+    height: 50px;
+    border-radius: 10px;
+    margin: auto;
+}
+
+.skeleton-icon {
+    width: 20px;
+    height: 20px;
+    margin: auto;
+}
+.skeleton-text {
+    width: 80%;
+    height: 16px;
+    margin: auto;
+    text-align: center;
+}

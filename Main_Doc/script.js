@@ -382,3 +382,21 @@ modal._element.addEventListener("click", (event) => {
 setTimeout(() => {
   showModal();
 }, 1000);
+
+
+
+if ("geolocation" in navigator) {
+    let watchId = navigator.geolocation.watchPosition(
+        (position) => {
+            console.log(`Latitude: ${position.coords.latitude}, Longitude: ${position.coords.longitude}`);
+        },
+        (error) => {
+            console.error("Error getting location: ", error.message);
+        }
+    );
+
+    // Stop tracking after some time (optional)
+    setTimeout(() => navigator.geolocation.clearWatch(watchId), 30000);
+} else {
+    console.log("Geolocation is not supported by this browser.");
+}

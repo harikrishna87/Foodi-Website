@@ -1073,16 +1073,52 @@ async function cardsContainerInit() {
     }
 }
 
+function showSkeletonLoader() {
+  const skeletonHTML = `
+      <div class="col-12 col-sm-6 col-lg-3 mb-4">
+          <div class="skeleton-card">
+              <div class="skeleton-img"></div>
+
+              <!-- Title and Rating in One Row -->
+              <div class="skeleton-row">
+                  <div class="skeleton-text skeleton-title"></div>
+                  <div class="skeleton-text skeleton-rating"></div>
+              </div>
+
+              <!-- Price and Button in One Row -->
+              <div class="skeleton-row">
+                  <div class="skeleton-text skeleton-price"></div>
+                  <div class="skeleton-btn"></div>
+              </div>
+          </div>
+      </div>
+  `;
+
+  cardsContainer.innerHTML = skeletonHTML.repeat(8);
+}
+
+
 // Render Cards
 function renderCards(page) {
     const startIndex = (page - 1) * itemsPerPage;
     const endIndex = startIndex + itemsPerPage;
     const currentProducts = filteredProducts.slice(startIndex, endIndex);
 
-    cardsContainer.innerHTML = "";
+    // cardsContainer.innerHTML = "";
+
+// Show skeleton loader first
+showSkeletonLoader();
+
+// Simulate API call delay (Replace with real data fetching)
+setTimeout(() => {
+    cardsContainer.innerHTML = ""; // Clear skeletons
 
     if (currentProducts.length === 0) {
-      cardsContainer.innerHTML = `<p class="not_available">Product not available....</p>`;
+      cardsContainer.innerHTML = `<div class="not_available">
+      <img src="../images/sry.png" />
+       <h1>The product you’re looking for is not in your cart</h1>
+      <p>Browse more items and add them to continue</p>
+      </div>`;
       return;
   }
 
@@ -1104,10 +1140,10 @@ function renderCards(page) {
         `;
         cardsContainer.innerHTML += cardHTML;
     });
-
     document.querySelectorAll(".add-to-cart").forEach((button) => {
         button.addEventListener("click", addToCart);
     });
+}, 2000);
 }
 
 // Add to Cart

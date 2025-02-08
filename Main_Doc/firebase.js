@@ -17,6 +17,7 @@ const firebaseConfig = {
     appId: "1:328659694803:web:ad569d146b5926c412d026"
 };
 
+// Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const auth = getAuth();
 const db = getFirestore();
@@ -74,6 +75,7 @@ function logout() {
     localStorage.removeItem("loginTimestamp");
     window.location.href = "index.html"; 
 }
+
 
 // Show message function
 function showmessage(message, divId) {
