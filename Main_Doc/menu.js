@@ -1097,22 +1097,22 @@ function showSkeletonLoader() {
   cardsContainer.innerHTML = skeletonHTML.repeat(8);
 }
 
-
-// Render Cards
 function renderCards(page) {
     const startIndex = (page - 1) * itemsPerPage;
     const endIndex = startIndex + itemsPerPage;
     const currentProducts = filteredProducts.slice(startIndex, endIndex);
 
+    // cardsContainer.innerHTML = "";
+
 showSkeletonLoader();
 
 setTimeout(() => {
-    cardsContainer.innerHTML = "";
+    cardsContainer.innerHTML = ""; // Clear skeletons
 
     if (currentProducts.length === 0) {
       cardsContainer.innerHTML = `<div class="not_available">
       <img src="../images/sry.png" />
-       <h1>The product you’re looking for is not in your cart</h1>
+       <h1><q>Sorry, but it seems the product you're looking for isn't in your cart</q></h1>
       <p>Browse more items and add them to continue</p>
       </div>`;
       return;
@@ -1313,3 +1313,5 @@ function searchProducts(query) {
 
 // Initialize
 cardsContainerInit();
+
+

@@ -211,7 +211,7 @@ label.form-label:active {
 .filter button {
     color: rgb(54, 241, 54);
     list-style: none;
-    padding: 25px 15px;
+    padding: 15px 15px;
     border: none;
     background-color: transparent;
     font-size: 20px;
@@ -230,11 +230,12 @@ label.form-label:active {
 }
 
 .search input{
-    width: 100%;
+    width: 70%;
     border: 2px solid rgb(183, 180, 180);
-    border-radius: 8px;
-    padding: 3px 10px;
-    margin-bottom: 15px;
+    border-radius: 15px;
+    padding: 8px;
+    margin-top: 30px;
+    font-size: 18px;
 }
 
 .search input:focus {
@@ -244,22 +245,23 @@ label.form-label:active {
 
 .not_available {
     text-align: center;
+    margin-top: 30px;
 }
 .not_available img{
-    width: 100px;
+    width: 110px;
     height: 100px;
 }
 
 .not_available h1{
     font-size: 30px;
-    color: rgb(183, 180, 180);
+    color: rgb(152, 151, 151);
     font-weight: 500;
     padding-top: 20px;
 }
 
 .not_available p {
     font-size: 20px;
-    color: rgb(226, 226, 226);
+    color: rgb(183, 180, 180);
     font-weight: 400;
     padding-top: 10px
 }

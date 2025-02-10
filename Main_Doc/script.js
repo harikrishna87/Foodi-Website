@@ -394,8 +394,7 @@ if ("geolocation" in navigator) {
             console.error("Error getting location: ", error.message);
         }
     );
-
-    // Stop tracking after some time (optional)
+    
     setTimeout(() => navigator.geolocation.clearWatch(watchId), 30000);
 } else {
     console.log("Geolocation is not supported by this browser.");
