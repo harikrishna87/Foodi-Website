@@ -1104,14 +1104,10 @@ function renderCards(page) {
     const endIndex = startIndex + itemsPerPage;
     const currentProducts = filteredProducts.slice(startIndex, endIndex);
 
-    // cardsContainer.innerHTML = "";
-
-// Show skeleton loader first
 showSkeletonLoader();
 
-// Simulate API call delay (Replace with real data fetching)
 setTimeout(() => {
-    cardsContainer.innerHTML = ""; // Clear skeletons
+    cardsContainer.innerHTML = "";
 
     if (currentProducts.length === 0) {
       cardsContainer.innerHTML = `<div class="not_available">
