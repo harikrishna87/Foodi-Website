@@ -291,19 +291,20 @@
 
             <h3 class=" text-lg font-bold mb-2">Login Here</h3>
             <label for="email" class="mb-2">Enter your Email:</label>
-            <input type="text" id="email" class="p-2 mb-2" value="User@gmail.com" required>
+            <input type="text" id="email" class="p-2 mb-2" placeholder="Enter your Email" required>
 
             <label for="password" class="mb-2">Enter your Password:</label>
-            <input type="password" id="password" class="p-2 mb-2" value="User@1234" required><i
+            <input type="password" id="password" class="p-2 mb-2" placeholder="Enter your Password" required><i
               class="fa-solid fa-eye-slash" id="icon"></i>
 
-            <button class="login-btn">Login</button>
+            <div class="guest_buttons">
+              <button class="login-btn">Login</button>
+              <button onclick="" class="guest-button">Guest Login</button>
+            </div>
+
             <p style="text-align: center;"> Create an New Account ? <a href="#" onclick="showSignUpForm()">Click
                 Here</a>
             </p>
-
-            <h3 class="text-center p-2" style="color: rgb(232, 103, 103); font-size: 20px;">Want to Login Pls Click On
-              Login Button</h3>
           </div>
         </form>
       </div>

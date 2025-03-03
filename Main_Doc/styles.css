@@ -347,6 +347,25 @@ input:focus {
   border: none;
   font-size: 18px;
   border-radius: 12px;
+  width: 45%;
+}
+
+.guest-button {
+  padding: 8px 16px;
+  color: white;
+  background-color: rgb(183, 180, 180);
+  margin: 10px 0px;
+  border: none;
+  font-size: 18px;
+  border-radius: 12px;
+  width: 45%;
+}
+
+.guest-buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
 }
 
 .mb-2 {

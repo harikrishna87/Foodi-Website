@@ -4,6 +4,7 @@ import {
     getAuth,
     createUserWithEmailAndPassword,
     signInWithEmailAndPassword,
+    signInAnonymously
 } from "https://www.gstatic.com/firebasejs/11.0.2/firebase-auth.js";
 import { getFirestore, setDoc, doc } from "https://www.gstatic.com/firebasejs/11.0.2/firebase-firestore.js";
 
@@ -180,6 +181,29 @@ loginBtn.addEventListener("click", (event) => {
             }
         });
 });
+
+const guestLogin = document.querySelector(".guest-button");
+
+if (guestLogin) {
+    guestLogin.addEventListener("click", () => {
+        signInAnonymously(auth)
+        .then((userCredentials) => {
+            const user = userCredentials.user;
+            localStorage.setItem('loggedInUserId', user.uid);
+            showmessage('Guest login successful!', 'loginmessage');
+            setTimeout(() => {
+                location.replace("home.html");
+            }, 2000);
+        })
+        .catch((error) => {
+            console.error("Error during guest login:", error.code, error.message);
+            showmessage("An error occurred. Please try again.", "loginmessage");
+        });
+    });
+} else {
+    console.error("Guest button not found!");
+}
+
 
 // Toggle password visibility for login form
 document.getElementById('icon').addEventListener('click', function () {
